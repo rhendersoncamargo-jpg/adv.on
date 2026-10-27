@@ -36,14 +36,13 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
   "exclude": [
     "node_modules",
     "examples",
     "dist",
+    ".next",
     ".vinext",
     ".wrangler",
     ".sites-runtime",

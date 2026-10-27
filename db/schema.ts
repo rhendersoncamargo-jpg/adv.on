@@ -53,3 +53,17 @@ export const diaryMentions = sqliteTable("diary_mentions", {
   entryId: text("entry_id").notNull().references(() => diaryEntries.id),
   entityId: text("entity_id").notNull().references(() => entities.id),
 });
+
+export const usefulPhones = sqliteTable("useful_phones", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(),
+  category: text("category").notNull().default(""),
+  phone: text("phone").notNull(),
+  extension: text("extension").notNull().default(""),
+  city: text("city").notNull().default(""),
+  notes: text("notes").notNull().default(""),
+  entityId: text("entity_id").references(() => entities.id),
+  createdAt: text("created_at").notNull(),
+  updatedAt: text("updated_at").notNull(),
+  deletedAt: text("deleted_at"),
+});

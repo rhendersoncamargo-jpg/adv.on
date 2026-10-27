@@ -3,7 +3,7 @@ import { getChatGPTUser } from "../../chatgpt-auth";
 
 export const dynamic = "force-dynamic";
 const ADMIN_EMAIL = "escritorio@otonnasser.com.br";
-const resources = ["entities", "categories", "relationships", "appointments", "diary"] as const;
+const resources = ["entities", "categories", "relationships", "appointments", "diary", "useful_phones"] as const;
 type Resource = (typeof resources)[number];
 
 function response(data: unknown, status = 200) {
@@ -19,6 +19,11 @@ function clean(value: unknown, max = 2000): string {
 function optional(value: unknown): string | null {
   const result = clean(value, 120);
   return result || null;
+}
+function phoneDigits(value: string): string { return value.replace(/\D/g, ""); }
+async function duplicateUsefulPhone(db: D1Database, name: string, phone: string, exceptId?: string) {
+  const rows = await db.prepare("SELECT id, phone FROM useful_phones WHERE lower(name) = lower(?) AND deleted_at IS NULL").bind(name).all<{ id: string; phone: string }>();
+  return rows.results.some(item => item.id !== exceptId && phoneDigits(item.phone) === phoneDigits(phone));
 }
 function validResource(value: string | null): value is Resource {
   return resources.includes(value as Resource);
@@ -38,19 +43,20 @@ export async function GET(request: Request) {
   await ensureAdmin(db);
   const resource = new URL(request.url).searchParams.get("resource");
   if (resource === "bootstrap") {
-    const [entities, categories, relationships, appointments, diary, administrator] = await Promise.all([
+    const [entities, categories, relationships, appointments, diary, usefulPhones, administrator] = await Promise.all([
       db.prepare("SELECT * FROM entities WHERE deleted_at IS NULL ORDER BY name COLLATE NOCASE").all(),
       db.prepare("SELECT * FROM categories WHERE deleted_at IS NULL ORDER BY name COLLATE NOCASE").all(),
       db.prepare("SELECT r.*, a.name AS source_name, b.name AS target_name FROM relationships r JOIN entities a ON a.id = r.source_id JOIN entities b ON b.id = r.target_id WHERE r.deleted_at IS NULL AND a.deleted_at IS NULL AND b.deleted_at IS NULL ORDER BY r.created_at DESC").all(),
       db.prepare("SELECT a.*, e.name AS entity_name FROM appointments a LEFT JOIN entities e ON e.id = a.entity_id WHERE a.deleted_at IS NULL ORDER BY a.starts_at ASC").all(),
       db.prepare("SELECT * FROM diary_entries WHERE deleted_at IS NULL ORDER BY occurred_at DESC").all(),
+      db.prepare("SELECT u.*, e.name AS entity_name FROM useful_phones u LEFT JOIN entities e ON e.id = u.entity_id AND e.deleted_at IS NULL WHERE u.deleted_at IS NULL ORDER BY u.name COLLATE NOCASE").all(),
       db.prepare("SELECT id, email, name, role, status FROM users WHERE id = ?").bind("initial-administrator").first(),
     ]);
     const [mentions, categoryLinks] = await Promise.all([
       db.prepare("SELECT m.entry_id, m.entity_id, e.name, e.kind FROM diary_mentions m JOIN entities e ON e.id = m.entity_id WHERE e.deleted_at IS NULL").all(),
       db.prepare("SELECT entity_id, category_id FROM entity_categories").all(),
     ]);
-    return response({ entities: entities.results, categories: categories.results, categoryLinks: categoryLinks.results, relationships: relationships.results, appointments: appointments.results, diary: diary.results, mentions: mentions.results, administrator, viewer: { email: user.email, name: user.displayName } });
+    return response({ entities: entities.results, categories: categories.results, categoryLinks: categoryLinks.results, relationships: relationships.results, appointments: appointments.results, diary: diary.results, usefulPhones: usefulPhones.results, mentions: mentions.results, administrator, viewer: { email: user.email, name: user.displayName } });
   }
   if (!validResource(resource)) return response({ error: "Recurso desconhecido" }, 400);
   const table = resource === "diary" ? "diary_entries" : resource;
@@ -77,8 +83,14 @@ export async function POST(request: Request) {
       const name = clean(body.name, 160);
       const kind = clean(body.kind, 20);
       if (!name || !["Pessoa", "Empresa"].includes(kind)) return response({ error: "Informe nome e tipo válidos" }, 400);
+      const email = clean(body.email, 160), phone = clean(body.phone, 40);
+      if (email || phone) {
+        const duplicate = await db.prepare("SELECT id FROM entities WHERE deleted_at IS NULL AND lower(name) = lower(?) AND ((? <> '' AND lower(email) = lower(?)) OR (? <> '' AND phone = ?)) LIMIT 1")
+          .bind(name, email, email, phone, phone).first();
+        if (duplicate) return response({ error: "Já existe um cadastro com esse nome e contato" }, 409);
+      }
       await db.prepare("INSERT INTO entities (id, kind, name, email, phone, notes, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)")
-        .bind(id, kind, name, clean(body.email, 160), clean(body.phone, 40), clean(body.notes), now, now).run();
+        .bind(id, kind, name, email, phone, clean(body.notes), now, now).run();
       const ids = Array.isArray(body.category_ids) ? [...new Set(body.category_ids.map((v) => clean(v, 80)).filter(Boolean))] : [];
       for (const categoryId of ids) await db.prepare("INSERT INTO entity_categories (id, entity_id, category_id) VALUES (?, ?, ?)").bind(crypto.randomUUID(), id, categoryId).run();
     } else if (resource === "relationships") {
@@ -86,6 +98,13 @@ export async function POST(request: Request) {
       if (!source || !target || source === target || !label) return response({ error: "Selecione dois contatos diferentes e informe o vínculo" }, 400);
       await db.prepare("INSERT INTO relationships (id, source_id, target_id, label, notes, created_at) VALUES (?, ?, ?, ?, ?, ?)")
         .bind(id, source, target, label, clean(body.notes), now).run();
+    } else if (resource === "useful_phones") {
+      const name = clean(body.name, 160), phone = clean(body.phone, 50);
+      if (!name || phone.replace(/\D/g, "").length < 8) return response({ error: "Informe o local e um telefone válido" }, 400);
+      const existing = await duplicateUsefulPhone(db, name, phone);
+      if (existing) return response({ error: "Este local e telefone já estão cadastrados" }, 409);
+      await db.prepare("INSERT INTO useful_phones (id, name, category, phone, extension, city, notes, entity_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+        .bind(id, name, clean(body.category, 80), phone, clean(body.extension, 20), clean(body.city, 100), clean(body.notes), optional(body.entity_id), now, now).run();
     } else if (resource === "appointments") {
       const title = clean(body.title, 160), starts = clean(body.starts_at, 40);
       if (!title || !starts || Number.isNaN(Date.parse(starts))) return response({ error: "Informe título e data válidos" }, 400);
@@ -122,11 +141,26 @@ export async function PUT(request: Request) {
     } else if (resource === "entities") {
       const name = clean(body.name, 160), kind = clean(body.kind, 20);
       if (!name || !["Pessoa", "Empresa"].includes(kind)) return response({ error: "Nome ou tipo inválido" }, 400);
-      await db.prepare("UPDATE entities SET kind = ?, name = ?, email = ?, phone = ?, notes = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL")
-        .bind(kind, name, clean(body.email, 160), clean(body.phone, 40), clean(body.notes), now, id).run();
+      const email = clean(body.email, 160), phone = clean(body.phone, 40);
+      if (email || phone) {
+        const duplicate = await db.prepare("SELECT id FROM entities WHERE deleted_at IS NULL AND id <> ? AND lower(name) = lower(?) AND ((? <> '' AND lower(email) = lower(?)) OR (? <> '' AND phone = ?)) LIMIT 1")
+          .bind(id, name, email, email, phone, phone).first();
+        if (duplicate) return response({ error: "Já existe um cadastro com esse nome e contato" }, 409);
+      }
+      const updated = await db.prepare("UPDATE entities SET kind = ?, name = ?, email = ?, phone = ?, notes = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL")
+        .bind(kind, name, email, phone, clean(body.notes), now, id).run();
+      if (!updated.meta.changes) return response({ error: "Cliente não encontrado" }, 404);
       await db.prepare("DELETE FROM entity_categories WHERE entity_id = ?").bind(id).run();
       const ids = Array.isArray(body.category_ids) ? [...new Set(body.category_ids.map((v) => clean(v, 80)).filter(Boolean))] : [];
       for (const categoryId of ids) await db.prepare("INSERT INTO entity_categories (id, entity_id, category_id) VALUES (?, ?, ?)").bind(crypto.randomUUID(), id, categoryId).run();
+    } else if (resource === "useful_phones") {
+      const name = clean(body.name, 160), phone = clean(body.phone, 50);
+      if (!name || phone.replace(/\D/g, "").length < 8) return response({ error: "Informe o local e um telefone válido" }, 400);
+      const existing = await duplicateUsefulPhone(db, name, phone, id);
+      if (existing) return response({ error: "Este local e telefone já estão cadastrados" }, 409);
+      const updated = await db.prepare("UPDATE useful_phones SET name = ?, category = ?, phone = ?, extension = ?, city = ?, notes = ?, entity_id = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL")
+        .bind(name, clean(body.category, 80), phone, clean(body.extension, 20), clean(body.city, 100), clean(body.notes), optional(body.entity_id), now, id).run();
+      if (!updated.meta.changes) return response({ error: "Telefone não encontrado" }, 404);
     } else if (resource === "appointments") {
       const title = clean(body.title, 160), starts = clean(body.starts_at, 40);
       if (!title || !starts || Number.isNaN(Date.parse(starts))) return response({ error: "Título ou data inválida" }, 400);
@@ -161,6 +195,7 @@ export async function DELETE(request: Request) {
   const resource = clean(body?.resource, 30), id = clean(body?.id, 80);
   if (!validResource(resource) || !id) return response({ error: "Registro inválido" }, 400);
   const table = resource === "diary" ? "diary_entries" : resource;
-  await db.prepare(`UPDATE ${table} SET deleted_at = ? WHERE id = ? AND deleted_at IS NULL`).bind(new Date().toISOString(), id).run();
+  const archived = await db.prepare(`UPDATE ${table} SET deleted_at = ? WHERE id = ? AND deleted_at IS NULL`).bind(new Date().toISOString(), id).run();
+  if (!archived.meta.changes) return response({ error: "Registro não encontrado" }, 404);
   return response({ id });
 }
