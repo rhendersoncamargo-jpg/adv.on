@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "ON.ADV | Gestão interna",
-  description: "Relacionamentos, agenda e diário de bordo do Oton Nasser Advocacia.",
+  description: "Relacionamentos, agenda e registro diário do Oton Nasser Advocacia.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
