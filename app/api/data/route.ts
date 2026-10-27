@@ -53,7 +53,7 @@ export async function GET(request: Request) {
       db.prepare("SELECT id, email, name, role, status FROM users WHERE id = ?").bind("initial-administrator").first(),
     ]);
     const [mentions, categoryLinks] = await Promise.all([
-      db.prepare("SELECT m.entry_id, m.entity_id, e.name, e.kind FROM diary_mentions m JOIN entities e ON e.id = m.entity_id WHERE e.deleted_at IS NULL").all(),
+      db.prepare("SELECT m.entry_id, m.entity_id, e.name, e.kind FROM diary_mentions m JOIN diary_entries d ON d.id = m.entry_id JOIN entities e ON e.id = m.entity_id WHERE d.deleted_at IS NULL AND e.deleted_at IS NULL").all(),
       db.prepare("SELECT entity_id, category_id FROM entity_categories").all(),
     ]);
     return response({ entities: entities.results, categories: categories.results, categoryLinks: categoryLinks.results, relationships: relationships.results, appointments: appointments.results, diary: diary.results, usefulPhones: usefulPhones.results, mentions: mentions.results, administrator, viewer: { email: user.email, name: user.displayName } });
@@ -111,10 +111,10 @@ export async function POST(request: Request) {
       await db.prepare("INSERT INTO appointments (id, title, kind, starts_at, ends_at, location, entity_id, status, outcome, notes, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
         .bind(id, title, clean(body.kind, 60) || "Reunião", starts, optional(body.ends_at), clean(body.location, 160), optional(body.entity_id), clean(body.status, 40) || "Agendado", clean(body.outcome), clean(body.notes), now, now).run();
     } else {
-      const bodyText = clean(body.body, 10000), occurred = clean(body.occurred_at, 40);
-      if (!bodyText || !occurred || Number.isNaN(Date.parse(occurred))) return response({ error: "Informe o registro e a data" }, 400);
-      await db.prepare("INSERT INTO diary_entries (id, occurred_at, body, author_email, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?)")
-        .bind(id, occurred, bodyText, user.email, now, now).run();
+      const bodyText = clean(body.body, 10000);
+      if (!bodyText) return response({ error: "Informe o conteúdo do registro" }, 400);
+      await db.prepare("INSERT INTO diary_entries (id, occurred_at, body, author_email, author_name, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)")
+        .bind(id, now, bodyText, user.email, user.displayName || user.email, now, now).run();
       const ids = Array.isArray(body.entity_ids) ? [...new Set(body.entity_ids.map((v) => clean(v, 80)).filter(Boolean))] : [];
       for (const entityId of ids) await db.prepare("INSERT INTO diary_mentions (id, entry_id, entity_id) VALUES (?, ?, ?)").bind(crypto.randomUUID(), id, entityId).run();
     }
@@ -172,10 +172,11 @@ export async function PUT(request: Request) {
       await db.prepare("UPDATE relationships SET source_id = ?, target_id = ?, label = ?, notes = ? WHERE id = ? AND deleted_at IS NULL")
         .bind(source, target, label, clean(body.notes), id).run();
     } else {
-      const bodyText = clean(body.body, 10000), occurred = clean(body.occurred_at, 40);
-      if (!bodyText || !occurred || Number.isNaN(Date.parse(occurred))) return response({ error: "Registro inválido" }, 400);
-      await db.prepare("UPDATE diary_entries SET occurred_at = ?, body = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL")
-        .bind(occurred, bodyText, now, id).run();
+      const bodyText = clean(body.body, 10000);
+      if (!bodyText) return response({ error: "Registro inválido" }, 400);
+      const updated = await db.prepare("UPDATE diary_entries SET body = ?, updated_at = ?, edited_at = ?, editor_email = ?, editor_name = ? WHERE id = ? AND deleted_at IS NULL")
+        .bind(bodyText, now, now, user.email, user.displayName || user.email, id).run();
+      if (!updated.meta.changes) return response({ error: "Registro não encontrado" }, 404);
       await db.prepare("DELETE FROM diary_mentions WHERE entry_id = ?").bind(id).run();
       const ids = Array.isArray(body.entity_ids) ? [...new Set(body.entity_ids.map((v) => clean(v, 80)).filter(Boolean))] : [];
       for (const entityId of ids) await db.prepare("INSERT INTO diary_mentions (id, entry_id, entity_id) VALUES (?, ?, ?)").bind(crypto.randomUUID(), id, entityId).run();

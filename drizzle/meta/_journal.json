@@ -15,6 +15,13 @@
       "when": 1793122384811,
       "tag": "0001_tidy_alex_wilder",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1793132531473,
+      "tag": "0002_fixed_king_bedlam",
+      "breakpoints": true
     }
   ]
 }

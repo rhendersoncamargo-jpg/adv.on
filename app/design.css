@@ -286,6 +286,13 @@ tr:hover td { background: #f8faff; }
 .quick-capture-head, .quick-capture-foot { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
 .quick-capture-head small, .quick-capture-foot span { color: #7d899a; font-size: 10px; }
 .quick-capture textarea { display: block; width: 100%; margin: 15px 0 12px; padding: 13px; border: 0; border-radius: 6px; background: #f1f5fd; color: var(--ink); resize: vertical; font-size: 12px; }
+.diary-client-picker { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; color: var(--ink); font-size: 11px; font-weight: 700; }
+.diary-client-picker small { color: #7d899a; font-weight: 400; }
+.diary-client-picker select, .diary-filters select { min-height: 38px; min-width: 240px; max-width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 0 10px; background: #fff; color: var(--ink); font-size: 11px; }
+.diary-filters { padding: 0 26px 18px; }
+.diary-filters label { display: flex; align-items: center; gap: 12px; color: #56657a; font-size: 11px; }
+.diary-audit { display: flex; flex-wrap: wrap; gap: 5px 18px; margin-top: 12px; color: #718094; }
+.diary-edit-note { margin: 0; padding: 10px 12px; border-radius: 6px; background: #f1f5fd; color: #53657c; font-size: 11px; }
 .quick-capture-foot .primary-button { height: 34px; font-size: 11px; }
 .diary-entry { gap: 22px; padding: 18px 0; }
 .entry-rail span { border-color: #9c793f; }
@@ -372,6 +379,8 @@ tr:hover td { background: #f8faff; }
   .dashboard-grid, .module-grid { grid-template-columns: 1fr; }
   .quick-modules { padding: 20px; }
   .quick-capture-foot { align-items: stretch; flex-direction: column; }
+  .diary-client-picker, .diary-filters label { align-items: stretch; flex-direction: column; }
+  .diary-client-picker select, .diary-filters select { width: 100%; min-width: 0; }
   .quick-capture-foot .primary-button { width: 100%; }
   .view-tabs { width: 100%; overflow-x: auto; }
   .view-tabs button { white-space: nowrap; }

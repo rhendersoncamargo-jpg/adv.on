@@ -45,6 +45,8 @@ export const appointments = sqliteTable("appointments", {
 export const diaryEntries = sqliteTable("diary_entries", {
   id: text("id").primaryKey(), occurredAt: text("occurred_at").notNull(),
   body: text("body").notNull(), authorEmail: text("author_email").notNull(),
+  authorName: text("author_name").notNull().default(""),
+  editedAt: text("edited_at"), editorEmail: text("editor_email"), editorName: text("editor_name"),
   createdAt: text("created_at").notNull(), updatedAt: text("updated_at").notNull(),
   deletedAt: text("deleted_at"),
 });
