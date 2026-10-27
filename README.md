@@ -1,6 +1,35 @@
-# vinext-starter
+# ADV.ON
 
-A clean full-stack starter running on [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and Drizzle support.
+Sistema interno de gestão do escritório Oton Nasser Advocacia.
+
+O ADV.ON reúne o painel diário, CRM de clientes, agenda, telefones úteis e Registro Diário em uma interface única. O projeto usa Next.js/Vinext, React, Cloudflare Workers, D1 e Drizzle ORM.
+
+## Estado atual
+
+- Painel do dia e indicadores operacionais.
+- CRM com clientes, pessoas, empresas, classificações e vínculos.
+- Agenda com visualizações diária, semanal e mensal.
+- Registro Diário com autoria, histórico de edição e associação opcional a clientes.
+- Telefones Úteis do escritório.
+
+## Desenvolvimento local
+
+```powershell
+npm install
+npm run dev
+```
+
+O servidor local abre em `http://127.0.0.1:5173`. Para simular a autenticação do ambiente Sites, acesse `/signin-with-chatgpt?return_to=/`.
+
+## Banco de dados
+
+O schema fica em `db/schema.ts` e as migrações em `drizzle/`. Dados locais, arquivos `.env`, builds e artefatos de publicação são ignorados pelo Git.
+
+## Observação de acesso
+
+A autenticação interna e o controle de permissões por usuário ainda estão em desenvolvimento. Não use dados reais ou sigilosos antes de restringir o acesso do ambiente publicado.
+
+## Base técnica
 
 ## Prerequisites
 
