@@ -169,10 +169,10 @@ export default function Home() {
     setImportingPhones(true); setError("");
     try {
       const response = await fetch("/api/admin/useful-phones-import", { method: "POST" });
-      const result = await response.json().catch(() => ({ error: "O servidor não concluiu a importação." })) as { error?: string; imported?: number; skipped?: number };
+      const result = await response.json().catch(() => ({ error: "O servidor não concluiu a importação." })) as { error?: string; imported?: number; updated?: number; skipped?: number };
       if (!response.ok) throw new Error(result.error || "Não foi possível importar os telefones");
       await load();
-      window.alert(`${result.imported || 0} telefones adicionados. ${result.skipped || 0} já estavam cadastrados.`);
+      window.alert(`${result.imported || 0} telefones adicionados. ${result.updated || 0} atualizados. ${result.skipped || 0} já estavam corretos.`);
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível importar os telefones"); }
     finally { setImportingPhones(false); }
   }
@@ -250,6 +250,7 @@ export default function Home() {
             {data.categories.length > 0 && <details className="panel inline-settings"><summary>Gerenciar classificações</summary><div className="category-grid">{data.categories.map(item => <div className="category-card" key={item.id}><div className="category-icon"><Tags size={18}/></div><div><strong>{item.name}</strong><p>{item.description || "Sem descrição"}</p></div><RowActions onEdit={() => openEdit("categories", item as unknown as Record<string, unknown>)} onDelete={() => remove("categories", item.id, item.name)}/></div>)}</div></details>}
           </>}
           {view === "telefones-uteis" && <section className="panel list-panel useful-phones">
+            <label className="diary-search"><Search size={17}/><input aria-label="Pesquisar telefones úteis" value={query} onChange={event => setQuery(event.target.value)} placeholder="Pesquisar por órgão, setor, telefone, cidade ou categoria"/>{query && <button type="button" className="icon-button" aria-label="Limpar pesquisa de telefones" onClick={() => setQuery("")}><X size={15}/></button>}</label>
             <div className="list-toolbar"><div><h2>Telefones Úteis</h2><p>Locais e serviços consultados com frequência pelo escritório.</p></div><span className="count-pill">{matchedUsefulPhones.length} números</span></div>
             {matchedUsefulPhones.length ? <div className="phone-grid">{matchedUsefulPhones.map(item => <article className="phone-card" key={item.id}><div className="phone-card-head"><span className="phone-icon"><Phone size={19}/></span><span className="type-badge">{item.category || "Geral"}</span></div><h3>{item.name}</h3>{item.city && <p><MapPin size={14}/>{item.city}</p>}<a className="phone-number" href={`tel:${item.phone.replace(/[^+\d]/g, "")}`}>{item.phone}{item.extension && <small> · ramal {item.extension}</small>}</a>{item.notes && <p className="phone-notes">{item.notes}</p>}{item.entity_name && <p className="phone-linked">Relacionado a {item.entity_name}</p>}<div className="phone-card-actions"><a href={`tel:${item.phone.replace(/[^+\d]/g, "")}`}><Phone size={15}/> Ligar</a><button type="button" onClick={() => { void navigator.clipboard.writeText(item.phone).then(() => setCopiedPhoneId(item.id)).catch(() => setError("Não foi possível copiar o telefone")); }}><Copy size={15}/>{copiedPhoneId === item.id ? "Copiado" : "Copiar"}</button><RowActions onEdit={() => openEdit("useful_phones", item as unknown as Record<string, unknown>)} onDelete={() => remove("useful_phones", item.id, item.name)}/></div></article>)}</div> : <EmptyState icon={Phone} title={q ? "Nenhum telefone encontrado" : "Lista de telefones vazia"} description={q ? "Tente buscar pelo local, número, cidade ou categoria." : "Cadastre os locais com que o escritório fala com frequência."} action={q ? undefined : "Novo telefone"} onAction={() => openCreate("useful_phones")}/>}
           </section>}

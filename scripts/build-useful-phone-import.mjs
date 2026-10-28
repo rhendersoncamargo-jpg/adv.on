@@ -80,7 +80,7 @@ function record(category, name, phone, city = "", notes = "") {
   };
 }
 
-function parseTrt(path, category, defaultCity) {
+function parseTrt(path, category, defaultCity, sourceLabel) {
   const lines = readFileSync(path, "utf8").split(/\r?\n/);
   const results = [];
   let city = defaultCity;
@@ -100,13 +100,15 @@ function parseTrt(path, category, defaultCity) {
       name = cleanText(line.split("[(")[0]).replace(/^[-–]\s*/, "").replace(/:$/, "") || "Atendimento do TRT";
     }
     for (const match of telMatches) {
-      const item = record(category, name, match[1], city, email ? `E-mail: ${email}` : "");
+      const notes = [`Origem: TRT24 — ${sourceLabel}`, email ? `E-mail: ${email}` : ""].filter(Boolean).join(" · ");
+      const item = record(category, name, match[1], city, notes);
       if (item) results.push(item);
     }
     const firstPhone = normalizePhone(telMatches[0][1]);
     const prefix = firstPhone.replace(/\D/g, "").slice(0, 6);
     for (const short of line.matchAll(/\bou\s+(\d{4})\b/gi)) {
-      const item = record(category, name, `${prefix}${short[1]}`, city, email ? `E-mail: ${email}` : "");
+      const notes = [`Origem: TRT24 — ${sourceLabel}`, email ? `E-mail: ${email}` : ""].filter(Boolean).join(" · ");
+      const item = record(category, name, `${prefix}${short[1]}`, city, notes);
       if (item) results.push(item);
     }
   }
@@ -151,9 +153,9 @@ function parseTjms(path) {
 }
 
 const raw = [
-  ...parseTrt(sources.trt2, "TRT 24 — 2º Grau", "Campo Grande"),
+  ...parseTrt(sources.trt2, "TRT24", "Campo Grande", "2º Grau"),
   ...parseTjms(sources.tjms),
-  ...parseTrt(sources.trt1, "TRT 24 — 1º Grau", "Campo Grande"),
+  ...parseTrt(sources.trt1, "TRT24", "Campo Grande", "1º Grau"),
 ];
 
 const unique = new Map();
