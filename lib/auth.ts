@@ -4,7 +4,8 @@ export const SESSION_COOKIE = "adv_on_session";
 export const ADMIN_EMAIL = "escritorio@otonnasser.com.br";
 const encoder = new TextEncoder();
 const SESSION_SECONDS = 8 * 60 * 60;
-const PASSWORD_ITERATIONS = 210_000;
+// Cloudflare Workers currently accepts at most 100,000 PBKDF2 iterations.
+const PASSWORD_ITERATIONS = 100_000;
 
 export type SessionUser = {
   id: string;

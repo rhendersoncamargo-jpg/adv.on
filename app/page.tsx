@@ -170,7 +170,7 @@ export default function Home() {
     setQuickSaving(true); setError("");
     try {
       const response = await fetch("/api/data", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ resource: "diary", body: quickBody.trim(), entity_ids: quickEntityId ? [quickEntityId] : [] }) });
-      const result = await response.json() as { error?: string };
+      const result = await response.json().catch(() => ({ error: "O servidor não concluiu a solicitação. Tente novamente." })) as { error?: string };
       if (!response.ok) throw new Error(result.error || "Não foi possível salvar o registro");
       setQuickBody(""); setQuickEntityId(""); await load();
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível salvar o registro"); }
@@ -292,7 +292,7 @@ function AuthScreen({ onAuthenticated }: { onAuthenticated: (user: SessionUser) 
     setSubmitting(true);
     try {
       const response = await fetch(mode === "setup" ? "/api/auth/setup" : "/api/auth/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email, password, token: setupToken }) });
-      const result = await response.json() as { error?: string };
+      const result = await response.json().catch(() => ({ error: "O servidor não concluiu a solicitação. Tente novamente." })) as { error?: string };
       if (!response.ok) throw new Error(result.error || "Não foi possível entrar");
       const me = await fetch("/api/auth/me", { cache: "no-store" });
       if (!me.ok) throw new Error("A sessão não pôde ser iniciada");
@@ -330,7 +330,7 @@ function UserAdministration({ currentUserId }: { currentUserId: string }) {
   const loadUsers = useCallback(async () => {
     try {
       const response = await fetch("/api/admin/users", { cache: "no-store" });
-      const result = await response.json() as { users?: ManagedUser[]; error?: string };
+      const result = await response.json().catch(() => ({ error: "O servidor não concluiu a solicitação." })) as { users?: ManagedUser[]; error?: string };
       if (!response.ok) throw new Error(result.error || "Não foi possível carregar usuários");
       setUsers(result.users || []);
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível carregar usuários"); }
@@ -342,7 +342,7 @@ function UserAdministration({ currentUserId }: { currentUserId: string }) {
     event.preventDefault(); setSaving(true); setError("");
     try {
       const response = await fetch("/api/admin/users", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, email, password }) });
-      const result = await response.json() as { error?: string };
+      const result = await response.json().catch(() => ({ error: "O servidor não concluiu a solicitação." })) as { error?: string };
       if (!response.ok) throw new Error(result.error || "Não foi possível criar o usuário");
       setName(""); setEmail(""); setPassword(""); await loadUsers();
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível criar o usuário"); }
@@ -353,7 +353,7 @@ function UserAdministration({ currentUserId }: { currentUserId: string }) {
     setError("");
     try {
       const response = await fetch("/api/admin/users", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, ...change }) });
-      const result = await response.json() as { error?: string };
+      const result = await response.json().catch(() => ({ error: "O servidor não concluiu a solicitação." })) as { error?: string };
       if (!response.ok) throw new Error(result.error || "Não foi possível alterar o usuário");
       await loadUsers();
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível alterar o usuário"); }
