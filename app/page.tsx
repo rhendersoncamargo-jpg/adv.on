@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { CalendarDays, ChevronLeft, ChevronRight, CirclePlus, ContactRound, LayoutDashboard, NotebookPen, Search, Settings2, UsersRound, Building2, Tags, Link2, Clock3, MapPin, X, Pencil, Trash2, ArrowUpRight, Menu, Check, AlertCircle, Bell, ArrowRight, Phone, Copy, Mail, LockKeyhole, LogOut, ShieldCheck, UserCog, UserPlus } from "lucide-react";
+import { CalendarDays, ChevronLeft, ChevronRight, CirclePlus, ContactRound, LayoutDashboard, NotebookPen, Search, Settings2, UsersRound, Building2, Tags, Link2, Clock3, MapPin, X, Pencil, Trash2, ArrowUpRight, Menu, Check, AlertCircle, Bell, ArrowRight, Phone, Copy, Mail, LockKeyhole, LogOut, ShieldCheck, UserCog, UserPlus, DatabaseZap } from "lucide-react";
 
 type Entity = { id: string; kind: "Pessoa" | "Empresa"; name: string; email: string; phone: string; notes: string; created_at: string; updated_at: string };
 type Category = { id: string; name: string; description: string };
@@ -60,6 +60,7 @@ export default function Home() {
   const [clientCategory, setClientCategory] = useState("");
   const [selectedClientId, setSelectedClientId] = useState<string | null>(null);
   const [copiedPhoneId, setCopiedPhoneId] = useState<string | null>(null);
+  const [importingPhones, setImportingPhones] = useState(false);
 
   useEffect(() => {
     void fetch("/api/auth/me", { cache: "no-store" }).then(async response => {
@@ -164,6 +165,18 @@ export default function Home() {
     catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível arquivar"); }
   }
 
+  async function importInstitutionalPhones() {
+    setImportingPhones(true); setError("");
+    try {
+      const response = await fetch("/api/admin/useful-phones-import", { method: "POST" });
+      const result = await response.json().catch(() => ({ error: "O servidor não concluiu a importação." })) as { error?: string; imported?: number; skipped?: number };
+      if (!response.ok) throw new Error(result.error || "Não foi possível importar os telefones");
+      await load();
+      window.alert(`${result.imported || 0} telefones adicionados. ${result.skipped || 0} já estavam cadastrados.`);
+    } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível importar os telefones"); }
+    finally { setImportingPhones(false); }
+  }
+
   async function saveQuickEntry(event: React.FormEvent) {
     event.preventDefault();
     if (!quickBody.trim()) return;
@@ -203,7 +216,7 @@ export default function Home() {
       <header className="topbar"><button type="button" className="mobile-toggle" onClick={() => setMobileMenu(true)} aria-label="Abrir menu"><Menu size={23}/></button><div className="top-search"><Search size={18}/><input aria-label="Pesquisar nesta seção" value={query} onChange={event => setQuery(event.target.value)} placeholder="Pesquisar nesta seção"/><kbd>Ctrl+K</kbd></div><div className="topbar-actions"><span className="top-date"><CalendarDays size={17}/>{prettyDate(today, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</span><Bell size={18} aria-hidden="true"/>{view !== "usuarios" && <button className="primary-button top-create" type="button" onClick={() => openCreate("diary")}><CirclePlus size={17}/>{view === "diario-hoje" ? "Novo registro" : "Ir para Hoje"}</button>}</div></header>
       <div className="content-wrap">
         {error && <div className="error-banner" role="alert"><AlertCircle size={18}/><span>{error}</span><button type="button" onClick={() => setError("")} aria-label="Dispensar aviso"><X size={16}/></button></div>}
-        <div className="page-heading"><div><div className="eyebrow">{view === "painel" ? "PAINEL DE CONTROLE JURÍDICO" : section === "CRM" ? "CRM DO ESCRITÓRIO" : section === "AGENDA" ? "ROTINA E COMPROMISSOS" : section === "ADMINISTRAÇÃO" ? "SEGURANÇA E ACESSO" : "MEMÓRIA DO ESCRITÓRIO"}</div><h1>{view === "painel" ? "Painel do Dia" : view === "clientes" ? "Clientes" : view === "telefones-uteis" ? "Telefones Úteis" : section === "AGENDA" ? "Agenda Integrada" : section === "REGISTRO DIÁRIO" ? "Registro Diário" : titleFor[view]}</h1><p>{view === "painel" ? "A rotina do escritório reunida em um só lugar." : view === "clientes" ? "Cadastre e atualize pessoas e organizações em um só lugar." : view === "telefones-uteis" ? "Números de locais e serviços que o escritório consulta com frequência." : section === "AGENDA" ? "Compromissos e acontecimentos planejados para a equipe." : section === "ADMINISTRAÇÃO" ? "Cadastre e controle quem pode entrar no sistema." : "A memória do escritório, organizada e pesquisável."}</p></div>{view !== "usuarios" && <div className="heading-actions"><span className="date-pill"><CalendarDays size={16}/>{prettyDate(today, { weekday: "long", day: "numeric", month: "long" })}</span><button className="primary-button" type="button" onClick={() => openCreate(view === "painel" ? "appointments" : activeResource)}><CirclePlus size={18}/>{view === "painel" ? "Novo compromisso" : createLabel}</button></div>}</div>
+        <div className="page-heading"><div><div className="eyebrow">{view === "painel" ? "PAINEL DE CONTROLE JURÍDICO" : section === "CRM" ? "CRM DO ESCRITÓRIO" : section === "AGENDA" ? "ROTINA E COMPROMISSOS" : section === "ADMINISTRAÇÃO" ? "SEGURANÇA E ACESSO" : "MEMÓRIA DO ESCRITÓRIO"}</div><h1>{view === "painel" ? "Painel do Dia" : view === "clientes" ? "Clientes" : view === "telefones-uteis" ? "Telefones Úteis" : section === "AGENDA" ? "Agenda Integrada" : section === "REGISTRO DIÁRIO" ? "Registro Diário" : titleFor[view]}</h1><p>{view === "painel" ? "A rotina do escritório reunida em um só lugar." : view === "clientes" ? "Cadastre e atualize pessoas e organizações em um só lugar." : view === "telefones-uteis" ? "Números de locais e serviços que o escritório consulta com frequência." : section === "AGENDA" ? "Compromissos e acontecimentos planejados para a equipe." : section === "ADMINISTRAÇÃO" ? "Cadastre e controle quem pode entrar no sistema." : "A memória do escritório, organizada e pesquisável."}</p></div>{view !== "usuarios" && <div className="heading-actions"><span className="date-pill"><CalendarDays size={16}/>{prettyDate(today, { weekday: "long", day: "numeric", month: "long" })}</span>{view === "telefones-uteis" && session?.role === "ADMINISTRADOR" && <button className="secondary-button" type="button" disabled={importingPhones} onClick={() => void importInstitutionalPhones()}><DatabaseZap size={17}/>{importingPhones ? "Importando…" : "Importar listas"}</button>}<button className="primary-button" type="button" onClick={() => openCreate(view === "painel" ? "appointments" : activeResource)}><CirclePlus size={18}/>{view === "painel" ? "Novo compromisso" : createLabel}</button></div>}</div>
         {loading ? <div className="loading-state">Carregando informações do escritório…</div> : <>
           {view === "painel" && <>
             <div className="welcome-card"><div><span>VISÃO GERAL</span><h2>Um bom dia começa com<br/>tudo em ordem.</h2><p>Acompanhe seus compromissos, contatos e registros recentes.</p></div><div className="welcome-monogram">ON<span>.</span></div></div>

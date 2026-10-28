@@ -1,0 +1,3539 @@
+[
+  {
+    "id": "import-9df5eb0ececf3bc1770b9d81",
+    "name": "Vara Cível e Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3239-1241",
+    "extension": "",
+    "city": "Água Clara",
+    "notes": "E-mail: acl-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-6baba43b8d640948332331c9",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99814-0159",
+    "extension": "",
+    "city": "Amambai",
+    "notes": "E-mail: amb-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-55173f97595ecb120dfb2161",
+    "name": "2ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99815-3057",
+    "extension": "",
+    "city": "Amambai",
+    "notes": "E-mail: amb-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-2c8cefc7e242956d27d6963c",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99814-0159",
+    "extension": "",
+    "city": "Amambai",
+    "notes": ""
+  },
+  {
+    "id": "import-16970f2d2e765f76726def52",
+    "name": "Vara Criminal - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99813-4316",
+    "extension": "",
+    "city": "Amambai",
+    "notes": "E-mail: amb-1vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-5decec25d2b3bae3b0d9d913",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 98469-1976",
+    "extension": "",
+    "city": "Anastácio",
+    "notes": "E-mail: ans-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-9c02fdb017e700b018b026f9",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 98469-1984",
+    "extension": "",
+    "city": "Anastácio",
+    "notes": ""
+  },
+  {
+    "id": "import-0b24762fd371f17a2e0be896",
+    "name": "Vara Única",
+    "category": "TJMS",
+    "phone": "(67) 3445-1121",
+    "extension": "",
+    "city": "Anaurilândia",
+    "notes": "E-mail: anu-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-a3fdafe7f236599bc2d7b7b2",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99913-9353",
+    "extension": "",
+    "city": "Aparecida do Taboado",
+    "notes": "E-mail: apt-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-fdb4b3317fc7fe31ee8256ef",
+    "name": "2ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99816-8815",
+    "extension": "",
+    "city": "Aparecida do Taboado",
+    "notes": "E-mail: apt-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-5b4188a74c74c57a1e846796",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99834-9506",
+    "extension": "",
+    "city": "Aquidauana",
+    "notes": "E-mail: aqu-1vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-8d2055a0e4f552bee53177f0",
+    "name": "2ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99834-4761",
+    "extension": "",
+    "city": "Aquidauana",
+    "notes": "E-mail: aqu-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-06e587f6bd4ff46ce5e9e9c2",
+    "name": "CEJUSC - Aquidauana",
+    "category": "TJMS",
+    "phone": "(67) 99127-0901",
+    "extension": "",
+    "city": "Aquidauana",
+    "notes": ""
+  },
+  {
+    "id": "import-abf083b9b9784f5c5235d7eb",
+    "name": "Juizado Especial Adjunto Cível",
+    "category": "TJMS",
+    "phone": "(67) 98208-0217",
+    "extension": "",
+    "city": "Aquidauana",
+    "notes": "E-mail: jespecialciv@tjms.jus.br"
+  },
+  {
+    "id": "import-8e66fbb56df9fc7392e8c078",
+    "name": "Juizado Especial Adjunto Criminal",
+    "category": "TJMS",
+    "phone": "(67) 99861-7987",
+    "extension": "",
+    "city": "Aquidauana",
+    "notes": ""
+  },
+  {
+    "id": "import-8e2bddda3a64bfdc94052aa2",
+    "name": "Vara Criminal, Infância e Juventude - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99861-7987",
+    "extension": "",
+    "city": "Aquidauana",
+    "notes": "E-mail: varacriminalaquidauana@gmail.com"
+  },
+  {
+    "id": "import-26d41bc54e3097f8580d2427",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 9654-4421",
+    "extension": "",
+    "city": "Bandeirantes",
+    "notes": ""
+  },
+  {
+    "id": "import-7cae079ab60491f71781a5de",
+    "name": "Vara Única",
+    "category": "TJMS",
+    "phone": "(67) 9654-4421",
+    "extension": "",
+    "city": "Bandeirantes",
+    "notes": ""
+  },
+  {
+    "id": "import-6c5145f7d5e46bd7df6116ea",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99945-4585",
+    "extension": "",
+    "city": "Bataguassu",
+    "notes": "E-mail: btg-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-c400393e0296add8e678ed2c",
+    "name": "2ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99860-3088",
+    "extension": "",
+    "city": "Bataguassu",
+    "notes": "E-mail: btg-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-55800c57d67c72654cde740d",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99681-2094",
+    "extension": "",
+    "city": "Bataguassu",
+    "notes": "E-mail: btg-jespecial@tjms.jus.br"
+  },
+  {
+    "id": "import-34cb6d7c1af727e04e9ea5a9",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99625-3118",
+    "extension": "",
+    "city": "Batayporã",
+    "notes": ""
+  },
+  {
+    "id": "import-b2f721c3406135d6d533d5fb",
+    "name": "Vara Única",
+    "category": "TJMS",
+    "phone": "(67) 99630-4822",
+    "extension": "",
+    "city": "Batayporã",
+    "notes": ""
+  },
+  {
+    "id": "import-3c7132b68870deed82b0375e",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 9113-3948",
+    "extension": "",
+    "city": "Bela Vista",
+    "notes": "E-mail: blv-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-76c71462336b838b85c86eb3",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 98471-6279",
+    "extension": "",
+    "city": "Bela Vista",
+    "notes": ""
+  },
+  {
+    "id": "import-57f9bb238415ff915362301d",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3255-1271",
+    "extension": "",
+    "city": "Bonito",
+    "notes": "E-mail: bon-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-202599d15d35a9c9fb300e78",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 9813-3015",
+    "extension": "",
+    "city": "Bonito",
+    "notes": "E-mail: bon-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-72b94e88d8dd8812dd768c9f",
+    "name": "2ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99812-1419",
+    "extension": "",
+    "city": "Bonito",
+    "notes": "E-mail: bon-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-3fd362291b8b5de079775f6f",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99895-3291",
+    "extension": "",
+    "city": "Bonito",
+    "notes": "E-mail: bon-jespecial@tjms.jus.br"
+  },
+  {
+    "id": "import-b34ea52a3b55d3df8698f31d",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 9325-1043",
+    "extension": "",
+    "city": "Brasilândia",
+    "notes": ""
+  },
+  {
+    "id": "import-58eb0953b031cf1430c94013",
+    "name": "Vara Única",
+    "category": "TJMS",
+    "phone": "(67) 99643-6942",
+    "extension": "",
+    "city": "Brasilândia",
+    "notes": "E-mail: bra-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-19432ecfea5c494f4a7038dc",
+    "name": "1 Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3453-1369",
+    "extension": "",
+    "city": "Caarapó",
+    "notes": "E-mail: cpo-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-1e0b853d24c8466250224bfd",
+    "name": "1 Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 9852-1332",
+    "extension": "",
+    "city": "Caarapó",
+    "notes": "E-mail: cpo-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-ab058d821615f1af5b011a39",
+    "name": "2ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3453-1369",
+    "extension": "",
+    "city": "Caarapó",
+    "notes": "E-mail: cpo-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-fcddd9da1f693b9534a39b99",
+    "name": "2ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 9857-7073",
+    "extension": "",
+    "city": "Caarapó",
+    "notes": "E-mail: cpo-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-cf9d81f9e6a9ea39699a9ef5",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 3453-1369",
+    "extension": "",
+    "city": "Caarapó",
+    "notes": "E-mail: cpo-jespecial@tjms.jus.br"
+  },
+  {
+    "id": "import-428a1bee3aad98a5549621e6",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 9922-7989",
+    "extension": "",
+    "city": "Caarapó",
+    "notes": "E-mail: cpo-jespecial@tjms.jus.br"
+  },
+  {
+    "id": "import-35ef82455b7bd9a86e29b44b",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3286-1650",
+    "extension": "",
+    "city": "Camapuã",
+    "notes": "E-mail: cam-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-1b2d04db920f576a25fd5807",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99885-7270",
+    "extension": "",
+    "city": "Camapuã",
+    "notes": "E-mail: cam-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-394e223d8667a931e8c0d6f8",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3286-1204",
+    "extension": "",
+    "city": "Camapuã",
+    "notes": "E-mail: cam-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-5a855d1f6148d915ed9db3c2",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99886-1263",
+    "extension": "",
+    "city": "Camapuã",
+    "notes": "E-mail: cam-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-3af2a7e678c8b16d5d59c26b",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99885-7270",
+    "extension": "",
+    "city": "Camapuã",
+    "notes": ""
+  },
+  {
+    "id": "import-b5a7488530580ac90ee3bb52",
+    "name": "10ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3574",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-bf1deab98673eb0b6dd7b478",
+    "name": "10ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 3317-8693",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-10jecivcri@tjms.jus.br"
+  },
+  {
+    "id": "import-c54a4809bb0158cd38322f28",
+    "name": "10ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 8468-4002",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-10jecivcri@tjms.jus.br"
+  },
+  {
+    "id": "import-a03250deed1cfec01fe9b86a",
+    "name": "11ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3308",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-11vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-da035e7ac3339e62724bbd39",
+    "name": "11ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 3317-8682",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-11jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-0a797b5e664f8d445fff1b2d",
+    "name": "11ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 8468-3847",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-11jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-78ba1ad5731e28099b0448ff",
+    "name": "12ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3622",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-12vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-23287615422c466c056d790e",
+    "name": "13ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 99696-4702",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-b64d7c9f65becfbbf93166a3",
+    "name": "14ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 99659-0902",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-bfb00594ae73a4d39cc43a38",
+    "name": "15ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3625",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-15vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-9726c5293071993454f24f7a",
+    "name": "1ª Câmara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1516",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-29784b4221353121436fed88",
+    "name": "1ª Câmara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3314-1629",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-c300a99de268311b5f10658d",
+    "name": "1ª Seção Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1429",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-ee3dab27ef7858bb2225cdd3",
+    "name": "1ª Seção Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3314-1629",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-03f61b01edeec47a015b108d",
+    "name": "1ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 99686-1193",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-1vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-1bbd5f98ea6d27f4af1be446",
+    "name": "1ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3460",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-1vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-bfd0159190c7ab2cc1cb5c03",
+    "name": "1ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 98177-0229",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-1vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-7157a8548d566b6bc6a97631",
+    "name": "1ª Vara da Violência Doméstica e Familiar Contra a Mulher",
+    "category": "TJMS",
+    "phone": "(67) 3317-3520",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-vviolencia@tjms.jus.br"
+  },
+  {
+    "id": "import-d3de1f7c147881c925a7dc71",
+    "name": "1ª Vara da Violência Doméstica e Familiar Contra a Mulher",
+    "category": "TJMS",
+    "phone": "(67) 99651-9102",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-vviolencia@tjms.jus.br"
+  },
+  {
+    "id": "import-d7cb1d4789a8d2bb7063d22c",
+    "name": "1ª Vara de Direitos Difusos, Coletivos e Individuais Homogêneos",
+    "category": "TJMS",
+    "phone": "(67) 3317-3524",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-d14f674c95e5ae0eb7e37644",
+    "name": "1ª Vara de Direitos Difusos, Coletivos e Individuais Homogêneos",
+    "category": "TJMS",
+    "phone": "(67) 9964-0843",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-9ac587235f01d09f0327cdbe",
+    "name": "1ª Vara de Execução de Título Extrajudicial, Embargos e Demais Incidentes",
+    "category": "TJMS",
+    "phone": "(67) 3317-3533",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: 1vet.extra@tjms.jus.br"
+  },
+  {
+    "id": "import-5b563f1d49d5ed58a181fcdc",
+    "name": "1ª Vara de Execução Fiscal Municipal do Interior",
+    "category": "TJMS",
+    "phone": "(67) 3317-3619",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: vefimi@tjms.jus.br"
+  },
+  {
+    "id": "import-8dc70b6ace046ec29d7fa0a6",
+    "name": "1ª Vara de Execução Penal",
+    "category": "TJMS",
+    "phone": "(67) 3317-3485",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-7531d84172c76d9587609a9a",
+    "name": "1ª Vara de Execução Penal do Interior",
+    "category": "TJMS",
+    "phone": "(67) 3314-2736",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-25dabb46be4595c7dff02ac1",
+    "name": "1ª Vara de Família",
+    "category": "TJMS",
+    "phone": "(67) 3317-3539",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-1vfamdigital@tjms.jus.br"
+  },
+  {
+    "id": "import-7edd575786103463c0fc4859",
+    "name": "1ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 3317-8695",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-1jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-85b49a1de5e8126428ec84b0",
+    "name": "1ª Vara dos Crimes Dolosos Contra a Vida e do Tribunal do Júri",
+    "category": "TJMS",
+    "phone": "(67) 99621-4836",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-1tjuri@tjms.jus.br"
+  },
+  {
+    "id": "import-505aa99b68974f9eb89080af",
+    "name": "1ª Vara Fazenda Pública e Registros Públicos",
+    "category": "TJMS",
+    "phone": "(67) 99633-7518",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-1vfrp@tjms.jus.br"
+  },
+  {
+    "id": "import-380920baf73091c686217f40",
+    "name": "2ª Câmara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1629",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-ae1403e1e03edf9d58de16e1",
+    "name": "2ª Câmara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3314-1433",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-f0dcad27ee04fecf4b7743fe",
+    "name": "2ª Seção Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1440",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-9bcbf359abbc509833bfd0b3",
+    "name": "2ª Seção Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3314-1629",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-103c818aa556b111f6e5b630",
+    "name": "2ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3350",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-d6eae2fe771c999c8ab2af91",
+    "name": "2ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3453",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-eb490d2033429280970309dc",
+    "name": "2ª Vara da Violência Doméstica e Familiar contra a Mulher",
+    "category": "TJMS",
+    "phone": "(67) 3317-3527",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-5c7a0cc6bba97fb5eb1745fc",
+    "name": "2ª Vara de Direitos Difusos, Coletivos e Individuais Homogêneos",
+    "category": "TJMS",
+    "phone": "(67) 3317-3524",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-f66a5357e8f7fb625e395258",
+    "name": "2ª Vara de Execução de Título Extrajudicial, Embargos e Demais Incidentes",
+    "category": "TJMS",
+    "phone": "(67) 3317-3533",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: 2vet.extra@tjms.jus.br"
+  },
+  {
+    "id": "import-e756a78e73c9cd1b0b464cbc",
+    "name": "2ª Vara de Execução Penal",
+    "category": "TJMS",
+    "phone": "(67) 3317-3538",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2expenal@tjms.jus.br"
+  },
+  {
+    "id": "import-b76927d590db325e7b8aa303",
+    "name": "2ª Vara de Execução Penal do Interior",
+    "category": "TJMS",
+    "phone": "(67) 98177-0170",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2vepin@tjms.jus.br"
+  },
+  {
+    "id": "import-ecff66f4a902fb080ddbb8eb",
+    "name": "2ª Vara de Família",
+    "category": "TJMS",
+    "phone": "(67) 3317-3516",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2vfamdigital@tjms.jus.br"
+  },
+  {
+    "id": "import-00f50902aa1d56ff84f4f2ce",
+    "name": "2ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 98208-0618",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-7bd0747bc91d15422e524176",
+    "name": "2ª Vara dos Crimes Dolosos Contra a Vida e do Tribunal do Júri",
+    "category": "TJMS",
+    "phone": "(67) 3317-3475",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2tjuri@tjms.jus.br"
+  },
+  {
+    "id": "import-f462c38b81fa2231f00a3aa0",
+    "name": "2ª Vara dos Crimes Dolosos Contra a Vida e do Tribunal do Júri",
+    "category": "TJMS",
+    "phone": "(67) 9614-3943",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2tjuri@tjms.jus.br"
+  },
+  {
+    "id": "import-f907a0507c818b08a2a5c96e",
+    "name": "2ª Vara Fazenda Pública e Registros Públicos",
+    "category": "TJMS",
+    "phone": "(67) 3317-3414",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2vfrp@tjms.jus.br"
+  },
+  {
+    "id": "import-0933b407eae10bd2b69330bc",
+    "name": "2ª Vara Fazenda Pública e Registros Públicos",
+    "category": "TJMS",
+    "phone": "(67) 99819-3289",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-2vfrp@tjms.jus.br"
+  },
+  {
+    "id": "import-c07bcfd0c52272b02ad732b2",
+    "name": "3ª Câmara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1516",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-537a83b28438732f3dfb0321",
+    "name": "3ª Câmara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3314-1425",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-fd85d8ebf0c4ec24c832021a",
+    "name": "3ª Seção Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1429",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-9c2ac56df09f70207cac7715",
+    "name": "3ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 99695-2584",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-2702be5d8e12f86cf0bb7573",
+    "name": "3ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3470",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-3vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-ea71dce1672a7a5abe5e39da",
+    "name": "3ª Vara da Violência Doméstica e Familiar Contra a Mulher (Casa da Mulher Brasileira)",
+    "category": "TJMS",
+    "phone": "(67) 3314-7601",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-3violencia@tjms.jus.br"
+  },
+  {
+    "id": "import-6aeb954b7caf315f7a37db41",
+    "name": "3ª Vara da Violência Doméstica e Familiar Contra a Mulher (Casa da Mulher Brasileira)",
+    "category": "TJMS",
+    "phone": "(67) 8471-6341",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-3violencia@tjms.jus.br"
+  },
+  {
+    "id": "import-614cd1079b66a767ef3658ab",
+    "name": "3ª Vara de Família",
+    "category": "TJMS",
+    "phone": "(67) 3317-3516",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-3vfamdigital@tjms.jus.br"
+  },
+  {
+    "id": "import-0858a35eb53a648d8cfc8025",
+    "name": "3ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 3317-8694",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-3jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-b6812f985da3df6fd1b35507",
+    "name": "3ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 98478-2184",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-3jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-867ece9db8d39766f1a9d402",
+    "name": "3ª Vara Fazenda Pública e Registros Públicos",
+    "category": "TJMS",
+    "phone": "(67) 3317-3414",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-3vfrp@tjms.jus.br"
+  },
+  {
+    "id": "import-d7b53ae3288210565afc1c4a",
+    "name": "4ª Câmara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1425",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-7e3969c2205a2868cab37f43",
+    "name": "4ª Seção Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1440",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-e79f7547608db31784941286",
+    "name": "4ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 99656-8769",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-4vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-317544f065d9c62f0ad21040",
+    "name": "4ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3463",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-4vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-8d2c797b5abf531abce5b844",
+    "name": "4ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 9623-0844",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-4vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-1be0fba68a2be10d6eeae956",
+    "name": "4ª Vara de Família",
+    "category": "TJMS",
+    "phone": "(67) 3317-3539",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-4vfamdigital@tjms.jus.br"
+  },
+  {
+    "id": "import-90beeb2fc1b19a0a11440da1",
+    "name": "4ª Vara de Violência Doméstica e Familiar Contra a Mulher",
+    "category": "TJMS",
+    "phone": "(67) 3314-1328",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-966e258e00afc23fb64e7d0c",
+    "name": "4ª Vara de Violência Doméstica e Familiar Contra a Mulher",
+    "category": "TJMS",
+    "phone": "(67) 98177-0244",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-9d605ddb10c3c6e86eb8cf1e",
+    "name": "4ª Vara do Juizado Especial da Fazenda Publica - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 3317-8593",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-4jec-fazpub@tjms.jus.br"
+  },
+  {
+    "id": "import-9a03fe16eee218e2ae0c1472",
+    "name": "4ª Vara Fazenda Pública e Registros Públicos",
+    "category": "TJMS",
+    "phone": "(67) 99633-7518",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-4vfrp@tjms.jus.br"
+  },
+  {
+    "id": "import-f5531a797d7e3e44029c5476",
+    "name": "5ª Câmara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1423",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-5d07a0a0f18cecce962795da",
+    "name": "5ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 99688-7381",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-5vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-8d6d6c4e1c22eaa33272b881",
+    "name": "5ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3640",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-5vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-ab4c6fd3313881ba8031dc31",
+    "name": "5ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 9824-8034",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-5vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-7f216437119e0447dba54b3a",
+    "name": "5ª Vara de Família",
+    "category": "TJMS",
+    "phone": "(67) 99660-8158",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-5e6vfamdigital@tjms.jus.br"
+  },
+  {
+    "id": "import-1deb73c2cfdfd51dbd33e412",
+    "name": "5ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 3317-8590",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-5jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-df8aa591e4d004aca1268e96",
+    "name": "5ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 98478-2188",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-5jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-52e491792e16a39820c21d5e",
+    "name": "6ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3378",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-6vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-ee33a6f0ebba5add456a36ee",
+    "name": "6ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 99651-0577",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-6vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-0aa6adb69b39fbc2610fac16",
+    "name": "6ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 99971-5321",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: marcio.alexandre@tjms.jus.br"
+  },
+  {
+    "id": "import-2b21f72f3b6f03b4f93b0615",
+    "name": "6ª Vara de Família",
+    "category": "TJMS",
+    "phone": "(67) 3317-3517",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: 6vfam.gab@tjms.jus.br"
+  },
+  {
+    "id": "import-50f81655b0b7663245f16550",
+    "name": "6ª Vara do Juizado Especial (Fazenda Pública) - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 3317-8607",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-jec-fazpub@tjms.jus.br"
+  },
+  {
+    "id": "import-dfd98a9a53482d7c4b60f521",
+    "name": "7ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3381",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-7vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-25ac2a9353ff681fb5ae33e8",
+    "name": "7ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 98469-4939",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-7vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-75cd9b037014b1a61407a063",
+    "name": "7ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3314-1039",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr7vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-67f86a6390b3c2997afa452b",
+    "name": "7ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 3317-8666",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-7jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-f8e31a3a83593020f7931703",
+    "name": "7ª Vara do Juizado Especial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 8468-3941",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-7jecentral@tjms.jus.br"
+  },
+  {
+    "id": "import-c795e495197d34f4bbf44944",
+    "name": "8ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 99239-3945",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-8vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-8f9f28f6a6d374e5cbab1371",
+    "name": "8ª Vara Criminal de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 98462-8235",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-8vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-f882c58255f71a0b583e331d",
+    "name": "8ª Vara do Juizado Especial - Justiça Itinerante",
+    "category": "TJMS",
+    "phone": "(67) 99822-0560",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-c66a29b303004ceeccf5e9a1",
+    "name": "9ª Vara Cível de Competência Residual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3627",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-9vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-e8f2ee0bb662c4adc905dc4a",
+    "name": "Cartório da 1ª e 2ª Varas/Ofícios de Sucessões",
+    "category": "TJMS",
+    "phone": "(67) 3317-3657",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-1e2vsuces@tjms.jus.br"
+  },
+  {
+    "id": "import-223d977560b5e00061369def",
+    "name": "Cartório Distribuidor Campo Grande",
+    "category": "TJMS",
+    "phone": "(67) 98177-0026",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-975c131238031d046cc7d1fd",
+    "name": "CEJUSC CENTRO INTEGRADO DE JUSTIÇA CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 98478-2207",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-aca19cfe32a13427fad80426",
+    "name": "CEJUSC DEFENSORIA PÚBLICA UNIDADE BELMAR FIDALGO",
+    "category": "TJMS",
+    "phone": "(67) 98465-4062",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-4abc11581d472dc6ae6cc5bd",
+    "name": "CEJUSC TJMS",
+    "category": "TJMS",
+    "phone": "(67) 98472-8046",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-38dd391926bc75773d20db2b",
+    "name": "CEJUSC TJMS",
+    "category": "TJMS",
+    "phone": "(67) 98468-7357",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-3a28c7418be028538485bc40",
+    "name": "Coordenadoria das Turmas Recursais Mistas",
+    "category": "TJMS",
+    "phone": "(67) 3314-1572",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-99389c1b69f8f8ad8e6a9309",
+    "name": "Coordenadoria de Atermações e Atendimento Judicial - CIJUS",
+    "category": "TJMS",
+    "phone": "(67) 99237-1425",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: atermacoes.cijus@tjms.jus.br"
+  },
+  {
+    "id": "import-12458eddf9285d8e04ec9950",
+    "name": "CPE - Central de Processamento Eletrônico",
+    "category": "TJMS",
+    "phone": "(67) 3317-8622",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-3e1e262456f7826ac4ee7c89",
+    "name": "Gab. Des. Elizabete Anache",
+    "category": "TJMS",
+    "phone": "(67) 3314-1604",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-d0ff812eec02e2ac946fd76b",
+    "name": "Núcleo de Justiça 4.0 Ações Ambientais",
+    "category": "TJMS",
+    "phone": "(67) 3317-8616",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-6aa36fd0864576e584e0c56f",
+    "name": "Núcleo de Justiça 4.0 Ações Usucapião",
+    "category": "TJMS",
+    "phone": "(67) 3317-8616",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-0bdd2c3d8ce9e6eb34381553",
+    "name": "Núcleo de Justiça 4.0 Arquivamento Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3317-8616",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-e8c83fc0895542760a7b7cee",
+    "name": "Órgão Especial",
+    "category": "TJMS",
+    "phone": "(67) 3314-1628",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-7524fc3a036555f2a81bc58e",
+    "name": "Ouvidoria Judiciária",
+    "category": "TJMS",
+    "phone": "(67) 3314-1314",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: ouvidoria@tjms.jus.br"
+  },
+  {
+    "id": "import-05afeb51c5b71fcbc5e6181f",
+    "name": "Seção Especial Cível",
+    "category": "TJMS",
+    "phone": "(67) 3314-1628",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-9d727f444e6d9f760d4cb98b",
+    "name": "Seção Especial Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3314-1629",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-6a9da1015b5b6bacd6e24c51",
+    "name": "Secretaria de Finanças - Conta Única - Gisele Maria",
+    "category": "TJMS",
+    "phone": "(67) 3314-1406",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-6da78dfc41347da3517ec9df",
+    "name": "Secretaria de Finanças - Conta Única - Luiz Fernando",
+    "category": "TJMS",
+    "phone": "(67) 3314-1665",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-48f215b4913f060ba08f3bad",
+    "name": "Unidade da Justiça Itinerante Estadual (Carreta da Justiça)",
+    "category": "TJMS",
+    "phone": "(67) 3317-8648",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-db275f790acad4d133191088",
+    "name": "Vara da Infância e da Adolescência",
+    "category": "TJMS",
+    "phone": "(67) 3317-3492",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-ijcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-b72c599476aafea517efeee6",
+    "name": "Vara da Infância, Adolescência e do Idoso",
+    "category": "TJMS",
+    "phone": "(67) 3317-3428",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-ijciv@tjms.jus.br"
+  },
+  {
+    "id": "import-84b9443de20192e51cbadf91",
+    "name": "Vara da Justiça Militar Estadual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3327",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-amil@tjms.jus.br"
+  },
+  {
+    "id": "import-2e94633bd3846f6289861d1b",
+    "name": "Vara de Cumprimento de Sentenças de contencioso Coletivo",
+    "category": "TJMS",
+    "phone": "(67) 3314-2739",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-95f9ad42ccd418baf7a38025",
+    "name": "Vara de Execução Fiscal da Fazenda Pública Estadual",
+    "category": "TJMS",
+    "phone": "(67) 3317-3397",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-vefest@tjms.jus.br"
+  },
+  {
+    "id": "import-7ee73cc05644e7a101e766c9",
+    "name": "Vara de Execução Fiscal da Fazenda Pública Municipal",
+    "category": "TJMS",
+    "phone": "(67) 99888-9623",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-vefmun@tjms.jus"
+  },
+  {
+    "id": "import-ec4003f8e742705daf2b5589",
+    "name": "Vara de Falências, Recuperações, Insolvências e Cumprimento de Cartas Precatórias Cíveis em Geral",
+    "category": "TJMS",
+    "phone": "(67) 3317-3406",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-vfci@tjms.jus.br"
+  },
+  {
+    "id": "import-9f51b6ab2158721abe7b59eb",
+    "name": "Vara de Falências, Recuperações, Insolvências e Cumprimento de Cartas Precatórias Cíveis em Geral",
+    "category": "TJMS",
+    "phone": "(67) 99868-5396",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-vfci@tjms.jus.br"
+  },
+  {
+    "id": "import-9b5f8768c4805629b917f734",
+    "name": "Vara Especializada em Crimes Contra a Criança e o Adolescente (VECA)",
+    "category": "TJMS",
+    "phone": "(67) 3317-3595",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgr-veca@tjms.jus.br"
+  },
+  {
+    "id": "import-67c306b62f85b0f17db21ca2",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 98152-5655",
+    "extension": "",
+    "city": "Cassilândia",
+    "notes": "E-mail: css-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-44b553afa4d3d7d98af571f8",
+    "name": "Juizado",
+    "category": "TJMS",
+    "phone": "(67) 99697-3867",
+    "extension": "",
+    "city": "Cassilândia",
+    "notes": "E-mail: css-jespecial@tjms.jus.br"
+  },
+  {
+    "id": "import-ad0ac80fc4505db333f6396a",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3562-6239",
+    "extension": "",
+    "city": "Chapadão do Sul",
+    "notes": "E-mail: chs-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-68947777878425e9922eba11",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 9839-6316",
+    "extension": "",
+    "city": "Chapadão do Sul",
+    "notes": "E-mail: chs-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-f5777e8082998b4f7c1724b8",
+    "name": "CEJUSC",
+    "category": "TJMS",
+    "phone": "(67) 98177-0130",
+    "extension": "",
+    "city": "Chapadão do Sul",
+    "notes": "E-mail: cejusc-chapadaodosul@tjms.jus.br"
+  },
+  {
+    "id": "import-0e7f3657690457a3f1a7dbfa",
+    "name": "Juizado",
+    "category": "TJMS",
+    "phone": "(67) 3562-6236",
+    "extension": "",
+    "city": "Chapadão do Sul",
+    "notes": "E-mail: chs-jespecial@tjms.jus.br"
+  },
+  {
+    "id": "import-55996588dd7482f34c3934f1",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99880-4504",
+    "extension": "",
+    "city": "Coronel Sapucaia",
+    "notes": ""
+  },
+  {
+    "id": "import-19fc242ca366a618edc1b9aa",
+    "name": "Vara Única",
+    "category": "TJMS",
+    "phone": "(67) 9880-4504",
+    "extension": "",
+    "city": "Coronel Sapucaia",
+    "notes": "E-mail: csa-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-3bb5431130dd93177033359a",
+    "name": "1ª Vara Cível - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3907-5982",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-1vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-43780f26b65ed99a2f054850",
+    "name": "1ª Vara Cível - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99839-0527",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-1vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-c8b1b5a8fc013e0a8c5cd6d6",
+    "name": "1ª Vara Criminal - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3234-4523",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-1vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-211e5562762da0126660d6df",
+    "name": "1ª Vara Criminal - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99829-7113",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-1vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-f39c75c41841bbfbc6bfb85f",
+    "name": "2ª Vara Cível - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3907-5975",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-7984b8bcfceb1aaa514b9ba0",
+    "name": "2ª Vara Cível - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99835-6328",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-027e420af33e029ee8d1c936",
+    "name": "2ª Vara Criminal - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3907-5890",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-2vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-12ac4c9e7e6be4bc62af6e8e",
+    "name": "2ª Vara Criminal - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99837-7506",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-2vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-739248ab0f233dabfab507d8",
+    "name": "3ª Vara Cível - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3907-5898",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-e0aac77d60f3ab82876cc5b3",
+    "name": "3ª Vara Cível - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99835-2491",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-424bea82e9828e8e9b50108d",
+    "name": "CEJUSC",
+    "category": "TJMS",
+    "phone": "(67) 99114-4101",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": ""
+  },
+  {
+    "id": "import-1b2a386f24c1917bf00d84e7",
+    "name": "Juizado Especial Adjunto Criminal - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 98466-1357",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: cor-jespecialcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-f34a970cdf3b7f762ab7e5e8",
+    "name": "Núcleo Psicossocial",
+    "category": "TJMS",
+    "phone": "(67) 99845-4651",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": ""
+  },
+  {
+    "id": "import-83cc6334d3d65d718d42b152",
+    "name": "Vara de Fazenda Pública - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3907-5772",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: crb-vfrp@tjms.jus.br"
+  },
+  {
+    "id": "import-90765ed531ef077ace549f6b",
+    "name": "Vara de Fazenda Pública - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99835-0681",
+    "extension": "",
+    "city": "Corumbá",
+    "notes": "E-mail: crb-vfrp@tjms.jus.br"
+  },
+  {
+    "id": "import-7eb0f3bda6ddbda8061aa3c4",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 32471-0132",
+    "extension": "",
+    "city": "Costa Rica",
+    "notes": "E-mail: csr-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-6f8626fa408048f063ac7cd0",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 32471-0132",
+    "extension": "",
+    "city": "Costa Rica",
+    "notes": "E-mail: csr-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-ccff2c592ce9f0c047c43492",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99881-2362",
+    "extension": "",
+    "city": "Coxim",
+    "notes": "E-mail: cox-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-8d1c0c34f886e24fb5ac6123",
+    "name": "2ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 9881-0884",
+    "extension": "",
+    "city": "Coxim",
+    "notes": "E-mail: cox-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-63dcaccf9635fa34b7a6e132",
+    "name": "Juizado Especial Adjunto Cível",
+    "category": "TJMS",
+    "phone": "(67) 6799-1182",
+    "extension": "",
+    "city": "Coxim",
+    "notes": ""
+  },
+  {
+    "id": "import-ca82e3c99617a3c26a2e00b4",
+    "name": "Juizado Especial Adjunto Criminal",
+    "category": "TJMS",
+    "phone": "(67) 98208-0607",
+    "extension": "",
+    "city": "Coxim",
+    "notes": ""
+  },
+  {
+    "id": "import-283bd462f4983de5bb7bf597",
+    "name": "Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 99842-4926",
+    "extension": "",
+    "city": "Coxim",
+    "notes": "E-mail: cox-vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-4b116e028f4d7cc367dff639",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3448-1110",
+    "extension": "",
+    "city": "Deodápolis",
+    "notes": "E-mail: deo-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-8d47e84497e17d28e8901dfa",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 98468-3909",
+    "extension": "",
+    "city": "Deodápolis",
+    "notes": ""
+  },
+  {
+    "id": "import-ad03f07428f23f201227b9cb",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 3448-1110",
+    "extension": "",
+    "city": "Deodápolis",
+    "notes": ""
+  },
+  {
+    "id": "import-6c007055c07b17800f24911f",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3243-1080",
+    "extension": "",
+    "city": "Dois Irmãos do Buriti",
+    "notes": "E-mail: dib-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-c796052fb97acc5d81824c6f",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3243-1081",
+    "extension": "",
+    "city": "Dois Irmãos do Buriti",
+    "notes": "E-mail: dib-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-aba8c1da936a00848b35672b",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 9808-0636",
+    "extension": "",
+    "city": "Dois Irmãos do Buriti",
+    "notes": ""
+  },
+  {
+    "id": "import-834c876f3d81eef86dfea8a1",
+    "name": "1ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 98177-0144",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-b0f15576a98bb78b4d02dd76",
+    "name": "1ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3902-1757",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-dcec3cc86d6ac58b1f66dfcb",
+    "name": "1ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 9976-2383",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-f50e6522f1b332abcd01aac5",
+    "name": "1ª Vara de Família e Sucessões",
+    "category": "TJMS",
+    "phone": "(67) 3902-1742",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-b501759eb03c9f48cf1e374a",
+    "name": "1ª Vara de Família e Sucessões",
+    "category": "TJMS",
+    "phone": "(67) 9998-7322",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-96f1677f7d9ccdd62b6c081e",
+    "name": "2ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3902-1750",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-b8a7341da0fe0354b0f63864",
+    "name": "2ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3902-1762",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-2vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-02149e24e9b27c1a2940449a",
+    "name": "2ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 9982-7465",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-2vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-1478e69752fa55acae1fcc3e",
+    "name": "2ª Vara de Família e Sucessões",
+    "category": "TJMS",
+    "phone": "(67) 3902-1900",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-16971e85103433ff0f9cd2c2",
+    "name": "2ª Vara de Família e Sucessões",
+    "category": "TJMS",
+    "phone": "(67) 9952-0947",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-0244d12142a49d8ca0d202d5",
+    "name": "2ª Vara do Juizado Especial Cível e Criminal",
+    "category": "TJMS",
+    "phone": "(67) 99953-7504",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-26f651570af926565a092fef",
+    "name": "3ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3902-1758",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-aa3302d3b538fe6e853c64f5",
+    "name": "3ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 9994-0350",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-86582831a0f96d837d571c29",
+    "name": "4ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3902-1759",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-d48be037a684f64d3e201f67",
+    "name": "4ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 99994-5421",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-656971b3bbcffd5278ef8cda",
+    "name": "5ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3902-1732",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-cf6ad103f4bcc5a25bc01e49",
+    "name": "5ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 9991-5992",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-2a97a181312f892ccb08594a",
+    "name": "6ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3902-1849",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-6vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-bf1a272b43f4e7d7fdbab6f6",
+    "name": "6ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 9948-9524",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-6vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-39cc98525c55aa14c297de4a",
+    "name": "Cartório Distribuidor de Dourados",
+    "category": "TJMS",
+    "phone": "(67) 3902-1763",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-distribui@tjms.jus.br"
+  },
+  {
+    "id": "import-decca096185f4049319ddeb4",
+    "name": "Cartório Distribuidor de Dourados",
+    "category": "TJMS",
+    "phone": "(67) 98177-0150",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-distribui@tjms.jus.br"
+  },
+  {
+    "id": "import-b67b8da6b6b5fb699d2d5883",
+    "name": "CEJUSC - Dourados",
+    "category": "TJMS",
+    "phone": "(67) 99122-4315",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-8711b1479587cc3b19c7dbbe",
+    "name": "Coordenadoria de Processamento, Atendimento ao Cidadão, Portaria, Segurança, Correspondências, Proto",
+    "category": "TJMS",
+    "phone": "(67) 3902-1005",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-bf80764354e386e2164799ae",
+    "name": "Coordenadoria de Processamento, Atendimento ao Cidadão, Portaria, Segurança, Correspondências, Proto",
+    "category": "TJMS",
+    "phone": "(67) 9954-1168",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-a61c386724efa5a06a6776a0",
+    "name": "Setor de Atendimento do Juizado Especial",
+    "category": "TJMS",
+    "phone": "(67) 3902-1905",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-de74a00081686833a4f3b642",
+    "name": "Vara da Infância e Adolescência",
+    "category": "TJMS",
+    "phone": "(67) 9994-9335",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-8f8915a00bb3aa33d94fa09d",
+    "name": "Vara de Fazenda Pública e Registros Públicos e de Cartas Precatórias Cíveis",
+    "category": "TJMS",
+    "phone": "(67) 9976-2848",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-varadafazendapublica@tjms.jus.br"
+  },
+  {
+    "id": "import-d6686db39c2a42afcd76f1fd",
+    "name": "Vara de Violência Doméstica e Familiar contra a Mulher e Cartas Precatórias Criminais",
+    "category": "TJMS",
+    "phone": "(67) 99953-5641",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: dou-3vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-a6ee696e9f346e83021f2ec3",
+    "name": "Vara do Juiz das Garantias, Tribunal do Júri e Execução Penal",
+    "category": "TJMS",
+    "phone": "(67) 9949-2956",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-02f0923180ac53355aeea529",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3473-1121",
+    "extension": "",
+    "city": "Eldorado",
+    "notes": "E-mail: eld-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-8674b019ec9946fb75363c0f",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99830-1342",
+    "extension": "",
+    "city": "Fátima do Sul",
+    "notes": "E-mail: fts-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-ebe14e4794a52b62f2f47296",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99828-8337",
+    "extension": "",
+    "city": "Fátima do Sul",
+    "notes": "E-mail: fts-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-d611e2664aeae09691162a85",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 98177-0152",
+    "extension": "",
+    "city": "Fátima do Sul",
+    "notes": ""
+  },
+  {
+    "id": "import-51646d7dc9a76ea9777ebb9b",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3466-1473",
+    "extension": "",
+    "city": "Glória de Dourados",
+    "notes": "E-mail: glo-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-b37434175a52155a98226afb",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 98177-0126",
+    "extension": "",
+    "city": "Iguatemi",
+    "notes": "E-mail: igu-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-dce0efce094cd5486d3084e5",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3574-1280",
+    "extension": "",
+    "city": "Inocência",
+    "notes": "E-mail: ino-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-42113a6deb665ddfc859a61a",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 99657-3582",
+    "extension": "",
+    "city": "Inocência",
+    "notes": "E-mail: ino-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-37abee21363a8d021a0c2003",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 3574-1280",
+    "extension": "",
+    "city": "Inocência",
+    "notes": ""
+  },
+  {
+    "id": "import-883ff54dd76f228853f03945",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99657-3582",
+    "extension": "",
+    "city": "Inocência",
+    "notes": ""
+  },
+  {
+    "id": "import-35a51e6e65a9c17bffd9ae08",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3451-2392",
+    "extension": "",
+    "city": "Itaporã",
+    "notes": ""
+  },
+  {
+    "id": "import-cb5759ead14e718e52f80462",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99324-8887",
+    "extension": "",
+    "city": "Itaporã",
+    "notes": ""
+  },
+  {
+    "id": "import-b5eadbf37018d33cb59c513a",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99324-8887",
+    "extension": "",
+    "city": "Itaporã",
+    "notes": ""
+  },
+  {
+    "id": "import-4fc2bb425ab648ce5d0079ab",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3476-1947",
+    "extension": "",
+    "city": "Itaquiraí",
+    "notes": "E-mail: itq-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-b6107a2c837dd5a8db886a36",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 9613-4787",
+    "extension": "",
+    "city": "Itaquiraí",
+    "notes": "E-mail: itq-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-121a2ade5544a79d1ac40cd1",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 9613-4787",
+    "extension": "",
+    "city": "Itaquiraí",
+    "notes": ""
+  },
+  {
+    "id": "import-74b0a709cd8a8d41bfa3c4bb",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99893-9856",
+    "extension": "",
+    "city": "Ivinhema",
+    "notes": "E-mail: ivn-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-203a7474c2dae4a2fb66e7a8",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99887-1042",
+    "extension": "",
+    "city": "Ivinhema",
+    "notes": "E-mail: ivn-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-1ca7315425d6f06301db9b1e",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 9893-9856",
+    "extension": "",
+    "city": "Ivinhema",
+    "notes": ""
+  },
+  {
+    "id": "import-0fddc99e8139c4fa4c88c9ad",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99800-1032",
+    "extension": "",
+    "city": "Jardim",
+    "notes": "E-mail: jdm-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-153cdd8450151c6e5d5fb9af",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99802-3902",
+    "extension": "",
+    "city": "Jardim",
+    "notes": "E-mail: jdm-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-2da466a32f4f71714296bf84",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 3251-1003",
+    "extension": "",
+    "city": "Jardim",
+    "notes": ""
+  },
+  {
+    "id": "import-ffa73e941987c54fa41d0f2e",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 3251-2045",
+    "extension": "",
+    "city": "Jardim",
+    "notes": ""
+  },
+  {
+    "id": "import-0af5bf595cdd5319be142d76",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3454-1611",
+    "extension": "",
+    "city": "Maracaju",
+    "notes": "E-mail: mju-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-bef3816fbed915ab8d35fcc9",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3454-1240",
+    "extension": "",
+    "city": "Maracaju",
+    "notes": "E-mail: mju-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-6a9cabf3e741d1117ec31f64",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 34541-2402",
+    "extension": "",
+    "city": "Maracaju",
+    "notes": "E-mail: mju-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-cfb968f2179cf8dd70e8f5fe",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 9895-3605",
+    "extension": "",
+    "city": "Maracaju",
+    "notes": "E-mail: mju-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-687bc64cdd23a5b4ae4d07df",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99895-6535",
+    "extension": "",
+    "city": "Maracaju",
+    "notes": "E-mail: mju-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-8115f0ae3dcb12a41cdcbab3",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 9903-6344",
+    "extension": "",
+    "city": "Miranda",
+    "notes": ""
+  },
+  {
+    "id": "import-21e043142fcf94adf44fe4e3",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99907-4588",
+    "extension": "",
+    "city": "Miranda",
+    "notes": ""
+  },
+  {
+    "id": "import-0f94bbce70e09c1565bb1253",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3242-1346",
+    "extension": "",
+    "city": "Miranda",
+    "notes": ""
+  },
+  {
+    "id": "import-d20d3ff6d0f15526a275eefa",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99809-8474",
+    "extension": "",
+    "city": "Mundo Novo",
+    "notes": "E-mail: mnv-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-c2f8689bbf6b2a5d60e28aca",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3474-1633",
+    "extension": "",
+    "city": "Mundo Novo",
+    "notes": "E-mail: mnv-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-3fde15a52797793f8a49f1a6",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99811-5188",
+    "extension": "",
+    "city": "Mundo Novo",
+    "notes": "E-mail: mnv-2v@tjms.jus"
+  },
+  {
+    "id": "import-a33d60edf0b3d2ca4da0fed9",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3474-1633",
+    "extension": "",
+    "city": "Mundo Novo",
+    "notes": "E-mail: mnv-2v@tjms.jus"
+  },
+  {
+    "id": "import-045ced01b8e1a47f21eb73bb",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 9135-1645",
+    "extension": "",
+    "city": "Mundo Novo",
+    "notes": ""
+  },
+  {
+    "id": "import-150001fbae7b14ea8d642abf",
+    "name": "1ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3924-4218",
+    "extension": "",
+    "city": "Naviraí",
+    "notes": "E-mail: nav-1vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-f56e80f405ab4715224f566e",
+    "name": "1ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 9955-8430",
+    "extension": "",
+    "city": "Naviraí",
+    "notes": "E-mail: nav-1vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-090401698966f1e8c5546e77",
+    "name": "1ª Vara Criminal e Juiz das Garantias de Naviraí",
+    "category": "TJMS",
+    "phone": "(67) 99955-8430",
+    "extension": "",
+    "city": "Naviraí",
+    "notes": ""
+  },
+  {
+    "id": "import-ef0f5397bb08fd69dc65eba3",
+    "name": "2ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 9958-6056",
+    "extension": "",
+    "city": "Naviraí",
+    "notes": "E-mail: nav.car2vcr@tjms.jus.br"
+  },
+  {
+    "id": "import-f3909a760968d49078d1bf19",
+    "name": "2º Vara",
+    "category": "TJMS",
+    "phone": "(67) 3924-4219",
+    "extension": "",
+    "city": "Naviraí",
+    "notes": ""
+  },
+  {
+    "id": "import-e418c1ffd6d588d577aabf31",
+    "name": "2º Vara",
+    "category": "TJMS",
+    "phone": "(67) 9960-5829",
+    "extension": "",
+    "city": "Naviraí",
+    "notes": ""
+  },
+  {
+    "id": "import-f7a67ca1d9c19f7438079d0a",
+    "name": "CEJUSC",
+    "category": "TJMS",
+    "phone": "(67) 99823-9446",
+    "extension": "",
+    "city": "Naviraí",
+    "notes": ""
+  },
+  {
+    "id": "import-a87d13feabb26443838dc796",
+    "name": "Juizados Especiais Cíveis",
+    "category": "TJMS",
+    "phone": "(67) 3924-4230",
+    "extension": "",
+    "city": "Naviraí",
+    "notes": "E-mail: nav-juizadocivel@tjms.jus.br"
+  },
+  {
+    "id": "import-b58bec67073d92c64f734fcf",
+    "name": "Núcleo Psicossocial",
+    "category": "TJMS",
+    "phone": "(67) 99910-3894",
+    "extension": "",
+    "city": "Naviraí",
+    "notes": ""
+  },
+  {
+    "id": "import-5c519b63e3a4282f854feb9e",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3236-1200",
+    "extension": "",
+    "city": "Nioaque",
+    "notes": "E-mail: luiz.borges@tjms.jus.br"
+  },
+  {
+    "id": "import-df2394d78f87e2dfa148c11d",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3236-1182",
+    "extension": "",
+    "city": "Nioaque",
+    "notes": "E-mail: luiz.borges@tjms.jus.br"
+  },
+  {
+    "id": "import-7128c4e671e5cc1bf58395da",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 3456-1170",
+    "extension": "",
+    "city": "Nova Alvorada do Sul",
+    "notes": ""
+  },
+  {
+    "id": "import-45577af6fc3d1d45e1018541",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99850-6920",
+    "extension": "",
+    "city": "Nova Andradina",
+    "notes": "E-mail: nan-1vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-5a8e7f9d3d8fbc6e049d485f",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99849-5809",
+    "extension": "",
+    "city": "Nova Andradina",
+    "notes": ""
+  },
+  {
+    "id": "import-71acaaf70fad0bc64d5258e6",
+    "name": "3ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99851-9718",
+    "extension": "",
+    "city": "Nova Andradina",
+    "notes": "E-mail: nan-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-9e87c4df51ef114283febad0",
+    "name": "Juizado Especial Cível",
+    "category": "TJMS",
+    "phone": "(67) 99927-8214",
+    "extension": "",
+    "city": "Nova Andradina",
+    "notes": ""
+  },
+  {
+    "id": "import-8cf66ef13b27062e05523567",
+    "name": "Juizado Especial Criminal",
+    "category": "TJMS",
+    "phone": "(67) 99927-8214",
+    "extension": "",
+    "city": "Nova Andradina",
+    "notes": ""
+  },
+  {
+    "id": "import-ef29d479cd3a18a56aa221f1",
+    "name": "Vara Criminal e do Juiz de Garantias",
+    "category": "TJMS",
+    "phone": "(67) 99848-5501",
+    "extension": "",
+    "city": "Nova Andradina",
+    "notes": ""
+  },
+  {
+    "id": "import-41522e42a4c58d11230098c9",
+    "name": "1ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3558-1801",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: prb-1vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-aadd579bbcc0e03c36cb156d",
+    "name": "1ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 99853-0226",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: prb-1vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-03dcb8977662d2211875ce29",
+    "name": "2ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3558-1801",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: prb-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-061de65eb0d40b625d89f80b",
+    "name": "2ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 99853-5694",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: prb-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-bbedb8234e573ba9980cfb8a",
+    "name": "3ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 3558-1801",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: prb-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-1a56fe4761c199a98e1dd8f9",
+    "name": "3ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 98177-0142",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: prb-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-f0c4a3ad1774feba2943d118",
+    "name": "CEJUSC",
+    "category": "TJMS",
+    "phone": "(67) 3558-1801",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: cejusc-paraiba@tjms.jus.br"
+  },
+  {
+    "id": "import-1621c653fecbb43734004cd2",
+    "name": "Juizado Especial Adjunto Cível",
+    "category": "TJMS",
+    "phone": "(67) 3558-1801",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: prb-jespecialciv@tjms.jus.br"
+  },
+  {
+    "id": "import-d273231c1930a46324f8081d",
+    "name": "Juizado Especial Adjunto Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3558-1801",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: prb-jespecialcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-1e1d4b7a42f1329f462d7631",
+    "name": "Vara Criminal e do Juiz de Garantias",
+    "category": "TJMS",
+    "phone": "(67) 3558-1801",
+    "extension": "",
+    "city": "Paranaíba",
+    "notes": "E-mail: prb-1vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-d6fd689856d56139a70f500e",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 9816-4989",
+    "extension": "",
+    "city": "Pedro Gomes",
+    "notes": "E-mail: pdg-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-66134ba7954aa99db5fdcc74",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99816-4989",
+    "extension": "",
+    "city": "Pedro Gomes",
+    "notes": ""
+  },
+  {
+    "id": "import-7855b7e1dd5a6148af0abd6e",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99830-8455",
+    "extension": "",
+    "city": "Ponta Porã",
+    "notes": "E-mail: ppr-1vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-2635ee55f090f954c34f4439",
+    "name": "1ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 9832-9783",
+    "extension": "",
+    "city": "Ponta Porã",
+    "notes": "E-mail: ppr-1vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-9ac28492b1d2706d73c8b247",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99831-8719",
+    "extension": "",
+    "city": "Ponta Porã",
+    "notes": "E-mail: ppr-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-1121c4d65082666bba202aec",
+    "name": "2ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3431-2441",
+    "extension": "",
+    "city": "Ponta Porã",
+    "notes": "E-mail: ppr-2vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-ce889b4c0af8e6b127e2c4d6",
+    "name": "2ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 9715-5786",
+    "extension": "",
+    "city": "Ponta Porã",
+    "notes": "E-mail: ppr-2vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-ce4c80ddfe674893a81cb2b6",
+    "name": "3ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 99829-4426",
+    "extension": "",
+    "city": "Ponta Porã",
+    "notes": "E-mail: ppr-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-45232e8cf95c63b87a19a123",
+    "name": "Cartório Distribuidor",
+    "category": "TJMS",
+    "phone": "(67) 98177-0149",
+    "extension": "",
+    "city": "Ponta Porã",
+    "notes": "E-mail: ppr-cdistribuidor@tjms.jus.br"
+  },
+  {
+    "id": "import-4e39e8db24fd92ebfca49c59",
+    "name": "Juizado Especial Adjunto Cível",
+    "category": "TJMS",
+    "phone": "(67) 99822-2668",
+    "extension": "",
+    "city": "Ponta Porã",
+    "notes": ""
+  },
+  {
+    "id": "import-ad39afe2864851e5a3168ed1",
+    "name": "Juizado Especial Adjunto Criminal",
+    "category": "TJMS",
+    "phone": "(67) 99119-9972",
+    "extension": "",
+    "city": "Ponta Porã",
+    "notes": ""
+  },
+  {
+    "id": "import-60058819faddb80bf1c65c35",
+    "name": "1ª Vara - Cartório",
+    "category": "TJMS",
+    "phone": "(67) 3287-1355",
+    "extension": "",
+    "city": "Porto Murtinho",
+    "notes": "E-mail: ptm-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-4e34b3f0f645942b9d2ee2c4",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99654-9602",
+    "extension": "",
+    "city": "Porto Murtinho",
+    "notes": ""
+  },
+  {
+    "id": "import-968ef3968707f0d62580349a",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3238-1242",
+    "extension": "",
+    "city": "Ribas do Rio Pardo",
+    "notes": "E-mail: rrp-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-ebb197d1412b822e260dc883",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99635-8721",
+    "extension": "",
+    "city": "Ribas do Rio Pardo",
+    "notes": "E-mail: rrp-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-1af318a8820743dcab62b670",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3238-1242",
+    "extension": "",
+    "city": "Ribas do Rio Pardo",
+    "notes": "E-mail: rrp-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-df976ad678f5afd25b34dff2",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 98177-0134",
+    "extension": "",
+    "city": "Ribas do Rio Pardo",
+    "notes": "E-mail: rrp-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-adee32157ef6411784e7e922",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 3452-7332",
+    "extension": "",
+    "city": "Rio Brilhante",
+    "notes": "E-mail: rbr-jespecial@tjms.jus.br"
+  },
+  {
+    "id": "import-5d9946307b1cc0eb4b3e6b8d",
+    "name": "Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 99903-5487",
+    "extension": "",
+    "city": "Rio Brilhante",
+    "notes": "E-mail: rbr-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-cfd0dc6763d6040daebfb97b",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 99640-3430",
+    "extension": "",
+    "city": "Rio Negro",
+    "notes": ""
+  },
+  {
+    "id": "import-01471252564b65026bfb8c9e",
+    "name": "Vara Única",
+    "category": "TJMS",
+    "phone": "(67) 99640-3430",
+    "extension": "",
+    "city": "Rio Negro",
+    "notes": "E-mail: rne-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-1fab90cbbd8668a1e4ed8c67",
+    "name": "Juizado Especial Adjunto",
+    "category": "TJMS",
+    "phone": "(67) 98469-1986",
+    "extension": "",
+    "city": "Rio Verde de Mato Grosso",
+    "notes": ""
+  },
+  {
+    "id": "import-d2f461c9c33049fbdb7bd799",
+    "name": "Vara Única",
+    "category": "TJMS",
+    "phone": "(67) 98469-1986",
+    "extension": "",
+    "city": "Rio Verde de Mato Grosso",
+    "notes": "E-mail: rve-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-63c3e945e3ad8d080c2dabf4",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99884-0560",
+    "extension": "",
+    "city": "São Gabriel do Oeste",
+    "notes": "E-mail: sgo-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-106ee4b5848f28eacc6da45e",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99884-7296",
+    "extension": "",
+    "city": "São Gabriel do Oeste",
+    "notes": "E-mail: sgo-2v@tjms.jus"
+  },
+  {
+    "id": "import-39b47f45ee0d337f221e1e26",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3479-1213",
+    "extension": "",
+    "city": "Sete Quedas",
+    "notes": "E-mail: stq-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-ac40d1908531a80984dd443c",
+    "name": "1ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99864-8987",
+    "extension": "",
+    "city": "Sidrolândia",
+    "notes": "E-mail: sid-1v@tjms.jus.br"
+  },
+  {
+    "id": "import-953e6dc328fc73403e933f14",
+    "name": "1ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 3272-8711",
+    "extension": "",
+    "city": "Sidrolândia",
+    "notes": "E-mail: sid-vcri@tjms.jus.br"
+  },
+  {
+    "id": "import-5823deae292346c57882b5d4",
+    "name": "1ª Vara Criminal",
+    "category": "TJMS",
+    "phone": "(67) 99861-8014",
+    "extension": "",
+    "city": "Sidrolândia",
+    "notes": "E-mail: sid-vcri@tjms.jus.br"
+  },
+  {
+    "id": "import-ce5e04b6c15d3e8cd4380c08",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 3272-8703",
+    "extension": "",
+    "city": "Sidrolândia",
+    "notes": "E-mail: sid-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-30b5c096473d74896e88454b",
+    "name": "2ª Vara",
+    "category": "TJMS",
+    "phone": "(67) 99862-1745",
+    "extension": "",
+    "city": "Sidrolândia",
+    "notes": "E-mail: sid-2v@tjms.jus.br"
+  },
+  {
+    "id": "import-e9d211e5ed248d82e86a6f97",
+    "name": "Juizado Especial",
+    "category": "TJMS",
+    "phone": "(67) 99639-2922",
+    "extension": "",
+    "city": "Sonora",
+    "notes": "E-mail: son-jespecial@tjms.jus.br"
+  },
+  {
+    "id": "import-c3f2c8bb4a0e135515a8af79",
+    "name": "Vara Única",
+    "category": "TJMS",
+    "phone": "(67) 3246-7445",
+    "extension": "",
+    "city": "Terenos",
+    "notes": "E-mail: rafael.domingues@tjms.jus.br"
+  },
+  {
+    "id": "import-2972b8b1fb2079e6b5fb2d83",
+    "name": "1ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 99943-9947",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: trl-1vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-0c40f94b4ed54c0c0b5f6da3",
+    "name": "1ª Vara Criminal Residual",
+    "category": "TJMS",
+    "phone": "(67) 99914-5046",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: trl-3vcrim@tjms.jus.br"
+  },
+  {
+    "id": "import-74ab2a36d0be287fdff370e5",
+    "name": "2ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 99928-5546",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: trl-2vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-be3b7dfdc8fe988eebe2e5f2",
+    "name": "2ª Vara Criminal Residual",
+    "category": "TJMS",
+    "phone": "(67) 9915-5737",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": ""
+  },
+  {
+    "id": "import-482bd35d05852d03864d3951",
+    "name": "3ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 99926-6452",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: trl-3vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-e5bbbc22e4eb99770188a69b",
+    "name": "4ª Vara Cível",
+    "category": "TJMS",
+    "phone": "(67) 99921-8224",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: trl-4vciv@tjms.jus.br"
+  },
+  {
+    "id": "import-92439ea91f3bac7de4c7a099",
+    "name": "Juizado Especial",
+    "category": "TJMS",
+    "phone": "(67) 99944-9717",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: trl-jespecial@tjms.jus.br"
+  },
+  {
+    "id": "import-640e2fb58ee92702df55de26",
+    "name": "Vara da Fazenda Pública",
+    "category": "TJMS",
+    "phone": "(67) 99858-7586",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: trl-fazpub@tjms.jus.br"
+  },
+  {
+    "id": "import-13b122e3ac8e40ebe29dc5a5",
+    "name": "Vara do Juiz das Garantias, Tribunal do Juri e Execução Penal",
+    "category": "TJMS",
+    "phone": "(67) 99928-6446",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": ""
+  },
+  {
+    "id": "import-0928baeb2a3397cbb35a0d2e",
+    "name": "Arquivo — Principal: 67-3316-1991Apoio: 67-3316-1995",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1991",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: arquivocg@trt24.jus.br"
+  },
+  {
+    "id": "import-07306634ead8abfff38641d9",
+    "name": "Arquivo — Principal: 67-3316-1991Apoio: 67-3316-1995",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1995",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: arquivocg@trt24.jus.br"
+  },
+  {
+    "id": "import-3c255e683143860bc0ecfaae",
+    "name": "Atermação",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1903",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: atermacao.cg@trt24.jus.br"
+  },
+  {
+    "id": "import-9b13bbccebfe1989a64356f6",
+    "name": "Seção de Mandados Judiciais",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1929",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: mandadoscg@trt24.jus.br"
+  },
+  {
+    "id": "import-1f91ee86ba14f4959794f5e6",
+    "name": "Secretaria da 1ª Vara do Trabalhode Campo Grande",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1965",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgvt1@trt24.jus.br"
+  },
+  {
+    "id": "import-94e56a5fd3eb64d0de03656c",
+    "name": "Secretaria da 2ª Vara do Trabalhode Campo Grande",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1912",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgvt2@trt24.jus.br"
+  },
+  {
+    "id": "import-93e6fd668acc1495ca035706",
+    "name": "Secretaria da 3ª Vara do Trabalhode Campo Grande",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1913",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgvt3@trt24.jus.br"
+  },
+  {
+    "id": "import-d6e8533e4738babfeec3eb93",
+    "name": "Secretaria da 4ª Vara do Trabalhode Campo Grande",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1914",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgvt4@trt24.jus.br"
+  },
+  {
+    "id": "import-5d89fc15304181d152b92741",
+    "name": "Secretaria da 4ª Vara do Trabalhode Campo Grande",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1944",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgvt4@trt24.jus.br"
+  },
+  {
+    "id": "import-f9c6f0c4d7a3bfcf73c14fe9",
+    "name": "Secretaria da 5ª Vara do Trabalhode Campo Grande",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1925",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgvt5@trt24.jus.br"
+  },
+  {
+    "id": "import-9eb2d85840581e9041c45a96",
+    "name": "Secretaria da 6ª Vara do Trabalhode Campo Grande",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1916",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgvt6@trt24.jus.br"
+  },
+  {
+    "id": "import-10adc7b20ed484d954b834e3",
+    "name": "Secretaria da 7ª Vara do Trabalhode Campo Grande",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1917",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cgvt7@trt24.jus.br"
+  },
+  {
+    "id": "import-5e3591e7374f96b94f167fa6",
+    "name": "Secretaria do CEJUSC 1º Grau",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1971",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cejusc.cg@trt24.jus.br"
+  },
+  {
+    "id": "import-510c1d4ffb391d2deab81660",
+    "name": "Secretaria do CEJUSC 1º Grau",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1972",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: cejusc.cg@trt24.jus.br"
+  },
+  {
+    "id": "import-f133f45109d5d3695e0a0e65",
+    "name": "Secretaria do Foro",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1905",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: forocg@trt24.jus.br"
+  },
+  {
+    "id": "import-52c92f531e606fde86ea30eb",
+    "name": "Secretaria do Foro",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3316-1901",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: forocg@trt24.jus.br"
+  },
+  {
+    "id": "import-bb7da24a2cd62f21b727954c",
+    "name": "Aquidauana — Vara do Trabalho",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3241-4252",
+    "extension": "",
+    "city": "Demais Varas",
+    "notes": "E-mail: aquidauana@trt24.jus.br"
+  },
+  {
+    "id": "import-897e99883af3e89065f1f878",
+    "name": "Chapadão do Sul — Vara do Trabalho",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3562-2753",
+    "extension": "",
+    "city": "Demais Varas",
+    "notes": "E-mail: chapadaodosul@trt24.jus.br"
+  },
+  {
+    "id": "import-fed0b4016417f9dbc6d99f57",
+    "name": "Corumbá — Vara do Trabalho",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3231-3977",
+    "extension": "",
+    "city": "Demais Varas",
+    "notes": "E-mail: corumba@trt24.jus.br"
+  },
+  {
+    "id": "import-facb8bec57f9024112c5fa0b",
+    "name": "Telefone - Plantão Judiciário 1º Grau",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 99265-1709",
+    "extension": "",
+    "city": "Demais Varas",
+    "notes": ""
+  },
+  {
+    "id": "import-062c8da6af24f23566622f15",
+    "name": "1ª Vara do Trabalho de Dourados",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 2108-1852",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: douradosvt1@trt24.jus.br"
+  },
+  {
+    "id": "import-73ea7ee88603fdab5089f321",
+    "name": "1ª Vara do Trabalho de Dourados",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 99603-4777",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: douradosvt1@trt24.jus.br"
+  },
+  {
+    "id": "import-ef9cc2230b8e4ebf4d3d62ed",
+    "name": "2ª Vara do Trabalho de Dourados",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 2108-1856",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: douradosvt2@trt24.jus.br"
+  },
+  {
+    "id": "import-e3ee105c840e3d53a709038f",
+    "name": "Oficiais de Justiça",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 2108-1866",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-b5bc8ad08baea0d123475914",
+    "name": "Seção de Mandados Judiciais",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 2108-1868",
+    "extension": "",
+    "city": "Dourados",
+    "notes": ""
+  },
+  {
+    "id": "import-b253ec93fdc5e7eabffe16d5",
+    "name": "Secretaria do Foro",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 2108-1859",
+    "extension": "",
+    "city": "Dourados",
+    "notes": "E-mail: douradosforo@trt24.jus.br"
+  },
+  {
+    "id": "import-9255e60c76c933002b98a9ec",
+    "name": "1ª Vara do Trabalho de Três Lagoas",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 2105-9604",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: treslagoasvt1@trt24.jus.br"
+  },
+  {
+    "id": "import-f2c97e72b6b27dc07bcf0fe3",
+    "name": "1ª Vara do Trabalho de Três Lagoas",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 98160-0196",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: treslagoasvt1@trt24.jus.br"
+  },
+  {
+    "id": "import-aa9d6212378fa5c52ebb000f",
+    "name": "2ª Vara do Trabalho de Três Lagoas",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 2105-9613",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: treslagoasvt2@trt24.jus.br"
+  },
+  {
+    "id": "import-498a4bb69ea21951812263af",
+    "name": "2ª Vara do Trabalho de Três Lagoas",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 99077-4444",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: treslagoasvt2@trt24.jus.br"
+  },
+  {
+    "id": "import-c005b4699d717dddf29fb6ba",
+    "name": "Secretaria do Foro",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 2105-9600",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: treslagoasforo@trt24.jus.br"
+  },
+  {
+    "id": "import-0aad725d68965d7f93add437",
+    "name": "Secretaria do Foro",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 2105-9601",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": "E-mail: treslagoasforo@trt24.jus.br"
+  },
+  {
+    "id": "import-92250369e20fe213e316d5ea",
+    "name": "Telefone – Plantão Judiciário 1º Grau",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 99265-1709",
+    "extension": "",
+    "city": "Três Lagoas",
+    "notes": ""
+  },
+  {
+    "id": "import-52e5c3a6b297c3cc8ef026d3",
+    "name": "Caarapó — Vara do Trabalho Itinerante",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3467-1220",
+    "extension": "",
+    "city": "Varas Itinerantes",
+    "notes": ""
+  },
+  {
+    "id": "import-4e843d1add05238fb39bc205",
+    "name": "Maracaju — Este site utiliza cookies para melhorar sua experiência. Saiba mais sobre cookies e nossa política de privacidade, Vara do Trabalho Itinerante",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3454-7976",
+    "extension": "",
+    "city": "Varas Itinerantes",
+    "notes": ""
+  },
+  {
+    "id": "import-142ce86950b88ffa7226a80d",
+    "name": "Sidrolândia — Ponto de Atendimento",
+    "category": "TRT 24 — 1º Grau",
+    "phone": "(67) 3272-2441",
+    "extension": "",
+    "city": "Varas Itinerantes",
+    "notes": ""
+  },
+  {
+    "id": "import-1eb8d4feac356b1a3541b80e",
+    "name": "Atendimento ao público",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1771",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-b5782a634f0a884f607c2f7f",
+    "name": "Gabinete Des. César Palumbo Fernandes — Chefe de Gabinete",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1767",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabcesarpalumbo@trt24.jus.br"
+  },
+  {
+    "id": "import-1077445b7a0d24db35bbd7ed",
+    "name": "Gabinete Des. César Palumbo Fernandes — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1765",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabcesarpalumbo@trt24.jus.br"
+  },
+  {
+    "id": "import-1d77213efa6c90f2e79690c1",
+    "name": "Gabinete Des. Francisco das Chagas Lima Filho — Chefe de Gabinete",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1791",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabfrancisco@trt24.jus.br"
+  },
+  {
+    "id": "import-35f204881eb5727ffaffa195",
+    "name": "Gabinete Des. Francisco das Chagas Lima Filho — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1790",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabfrancisco@trt24.jus.br"
+  },
+  {
+    "id": "import-c411c87350840606afecaf50",
+    "name": "Gabinete Des. Francisco das Chagas Lima Filho — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1792",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabfrancisco@trt24.jus.br"
+  },
+  {
+    "id": "import-f33299a8f56e5828fccc0b91",
+    "name": "Gabinete Des. João de Deus Gomes de Souza — Chefe de Gabinete/Recepção",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1780",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabjoaodedeus@trt24.jus.br"
+  },
+  {
+    "id": "import-ff6656ffb8bc0e65f51a17cb",
+    "name": "Gabinete Des. João Marcelo Balsanelli — Chefe de Gabinete",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1754",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabjoaomarcelo@trt24.jus.br"
+  },
+  {
+    "id": "import-fdb8acde892b167daedd1560",
+    "name": "Gabinete Des. João Marcelo Balsanelli — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1761",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabjoaomarcelo@trt24.jus.br"
+  },
+  {
+    "id": "import-b0d32b572593cf6f3ca88355",
+    "name": "Gabinete Des. Márcio Vasques Thibau de Almeida — Chefe de Gabinete",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1827",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabmarciothibau@trt24.jus.br"
+  },
+  {
+    "id": "import-d18167536c60c7ba1554aea1",
+    "name": "Gabinete Des. Márcio Vasques Thibau de Almeida — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1829",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabmarciothibau@trt24.jus.br"
+  },
+  {
+    "id": "import-013fc4b5ad4e6c62d99cfa7a",
+    "name": "Gabinete Des. Márcio Vasques Thibau de Almeida — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1832",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabmarciothibau@trt24.jus.br"
+  },
+  {
+    "id": "import-ad7a461da049e44c1cc1b5bd",
+    "name": "Gabinete Des. Nicanor Araújo Lima — Chefe de Gabinete",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1794",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabnicanorlima@trt24.jus.br"
+  },
+  {
+    "id": "import-0b156ef72b58330767937439",
+    "name": "Gabinete Des. Nicanor Araújo Lima — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1758",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabnicanorlima@trt24.jus.br"
+  },
+  {
+    "id": "import-5d7136a763b915ff830c6920",
+    "name": "Gabinete Des. Tomás Bawden de Castro Silva — Chefe de Gabinete",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1776",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabtomas@trt24.jus.br"
+  },
+  {
+    "id": "import-da862e8d998e8b4700e375da",
+    "name": "Gabinete Des. Tomás Bawden de Castro Silva — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1773",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabtomas@trt24.jus.br"
+  },
+  {
+    "id": "import-cfee9de1a943be7122745749",
+    "name": "Gabinete Juiz convocado Flávio da Costa Higa — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1775",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabandreluis@trt24.jus.br"
+  },
+  {
+    "id": "import-f70a78c4c50059e54c2d02ef",
+    "name": "Gabinete Juiz convocado Flávio da Costa Higa — Recepção/Apoio",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1777",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: gabandreluis@trt24.jus.br"
+  },
+  {
+    "id": "import-80b2233597c5b904b0ba8ab3",
+    "name": "Plantão Judiciário 2º Grau",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 99265-1709",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-2f6f38705b3e10dafbd7adfa",
+    "name": "Secretaria do Tribunal Pleno",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1866",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: tribunalpleno@trt24.jus.br"
+  },
+  {
+    "id": "import-7a68887d85ed5ce88f751851",
+    "name": "Secretaria do Tribunal Pleno",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1821",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: tribunalpleno@trt24.jus.br"
+  },
+  {
+    "id": "import-287d1a13809a4d24a380f8fc",
+    "name": "Secretaria-Geral Judiciária – SGJ",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1744",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: sj@trt24.jus.br"
+  },
+  {
+    "id": "import-834d60659b2fcccaf7aaea5d",
+    "name": "Secretaria-Geral Judiciária – SGJ",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1883",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: sj@trt24.jus.br"
+  },
+  {
+    "id": "import-f23ca23dadb8b4780db8a718",
+    "name": "Secretaria-Geral Judiciária – SGJ",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1749",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: sj@trt24.jus.br"
+  },
+  {
+    "id": "import-72293a2aff3888f6bc75b89c",
+    "name": "Serviço de Informação ao Cidadão – SIC",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1784",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": ""
+  },
+  {
+    "id": "import-591d6aac44ea567ad00070ed",
+    "name": "Subsecretaria da 1ª Turma",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1860",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: primeiraturma@trt24.jus.br"
+  },
+  {
+    "id": "import-783a559e7eeb4dc6a0ed0c5f",
+    "name": "Subsecretaria da 2ª Turma",
+    "category": "TRT 24 — 2º Grau",
+    "phone": "(67) 3316-1795",
+    "extension": "",
+    "city": "Campo Grande",
+    "notes": "E-mail: segundaturma@trt24.jus.br"
+  }
+]
