@@ -1,4 +1,4 @@
-import { sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 export const users = sqliteTable("users", {
   id: text("id").primaryKey(), email: text("email").notNull().unique(),
@@ -67,6 +67,35 @@ export const usefulPhones = sqliteTable("useful_phones", {
   city: text("city").notNull().default(""),
   notes: text("notes").notNull().default(""),
   entityId: text("entity_id").references(() => entities.id),
+  createdAt: text("created_at").notNull(),
+  updatedAt: text("updated_at").notNull(),
+  deletedAt: text("deleted_at"),
+});
+
+export const vehicles = sqliteTable("vehicles", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(),
+  plate: text("plate").notNull().default(""),
+  model: text("model").notNull().default(""),
+  notes: text("notes").notNull().default(""),
+  createdAt: text("created_at").notNull(),
+  updatedAt: text("updated_at").notNull(),
+  deletedAt: text("deleted_at"),
+});
+
+export const vehicleLogs = sqliteTable("vehicle_logs", {
+  id: text("id").primaryKey(),
+  vehicleId: text("vehicle_id").notNull().references(() => vehicles.id),
+  usedAt: text("used_at").notNull(),
+  kmStart: integer("km_start").notNull(),
+  kmEnd: integer("km_end").notNull(),
+  route: text("route").notNull().default(""),
+  notes: text("notes").notNull().default(""),
+  authorEmail: text("author_email").notNull(),
+  authorName: text("author_name").notNull().default(""),
+  editedAt: text("edited_at"),
+  editorEmail: text("editor_email"),
+  editorName: text("editor_name"),
   createdAt: text("created_at").notNull(),
   updatedAt: text("updated_at").notNull(),
   deletedAt: text("deleted_at"),

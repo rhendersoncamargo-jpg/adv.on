@@ -2,7 +2,7 @@ import { env } from "cloudflare:workers";
 import { getSessionUser } from "../../../lib/auth";
 
 export const dynamic = "force-dynamic";
-const resources = ["entities", "categories", "relationships", "appointments", "diary", "useful_phones"] as const;
+const resources = ["entities", "categories", "relationships", "appointments", "diary", "useful_phones", "vehicles", "vehicle_logs"] as const;
 type Resource = (typeof resources)[number];
 
 function response(data: unknown, status = 200) {
@@ -34,20 +34,22 @@ export async function GET(request: Request) {
   const db = database();
   const resource = new URL(request.url).searchParams.get("resource");
   if (resource === "bootstrap") {
-    const [entities, categories, relationships, appointments, diary, usefulPhones, administrator] = await Promise.all([
+    const [entities, categories, relationships, appointments, diary, usefulPhones, vehicles, vehicleLogs, administrator] = await Promise.all([
       db.prepare("SELECT * FROM entities WHERE deleted_at IS NULL ORDER BY name COLLATE NOCASE").all(),
       db.prepare("SELECT * FROM categories WHERE deleted_at IS NULL ORDER BY name COLLATE NOCASE").all(),
       db.prepare("SELECT r.*, a.name AS source_name, b.name AS target_name FROM relationships r JOIN entities a ON a.id = r.source_id JOIN entities b ON b.id = r.target_id WHERE r.deleted_at IS NULL AND a.deleted_at IS NULL AND b.deleted_at IS NULL ORDER BY r.created_at DESC").all(),
       db.prepare("SELECT a.*, e.name AS entity_name FROM appointments a LEFT JOIN entities e ON e.id = a.entity_id WHERE a.deleted_at IS NULL ORDER BY a.starts_at ASC").all(),
       db.prepare("SELECT * FROM diary_entries WHERE deleted_at IS NULL ORDER BY occurred_at DESC").all(),
       db.prepare("SELECT u.*, e.name AS entity_name FROM useful_phones u LEFT JOIN entities e ON e.id = u.entity_id AND e.deleted_at IS NULL WHERE u.deleted_at IS NULL ORDER BY u.name COLLATE NOCASE").all(),
+      db.prepare("SELECT * FROM vehicles WHERE deleted_at IS NULL ORDER BY name COLLATE NOCASE").all(),
+      db.prepare("SELECT l.*, v.name AS vehicle_name, v.plate AS vehicle_plate FROM vehicle_logs l JOIN vehicles v ON v.id = l.vehicle_id WHERE l.deleted_at IS NULL AND v.deleted_at IS NULL ORDER BY l.used_at DESC").all(),
       db.prepare("SELECT id, email, name, role, status FROM users WHERE id = ?").bind("initial-administrator").first(),
     ]);
     const [mentions, categoryLinks] = await Promise.all([
       db.prepare("SELECT m.entry_id, m.entity_id, e.name, e.kind FROM diary_mentions m JOIN diary_entries d ON d.id = m.entry_id JOIN entities e ON e.id = m.entity_id WHERE d.deleted_at IS NULL AND e.deleted_at IS NULL").all(),
       db.prepare("SELECT entity_id, category_id FROM entity_categories").all(),
     ]);
-    return response({ entities: entities.results, categories: categories.results, categoryLinks: categoryLinks.results, relationships: relationships.results, appointments: appointments.results, diary: diary.results, usefulPhones: usefulPhones.results, mentions: mentions.results, administrator, viewer: { email: user.email, name: user.name } });
+    return response({ entities: entities.results, categories: categories.results, categoryLinks: categoryLinks.results, relationships: relationships.results, appointments: appointments.results, diary: diary.results, usefulPhones: usefulPhones.results, vehicles: vehicles.results, vehicleLogs: vehicleLogs.results, mentions: mentions.results, administrator, viewer: { email: user.email, name: user.name } });
   }
   if (!validResource(resource)) return response({ error: "Recurso desconhecido" }, 400);
   const table = resource === "diary" ? "diary_entries" : resource;
@@ -101,6 +103,19 @@ export async function POST(request: Request) {
       if (!title || !starts || Number.isNaN(Date.parse(starts))) return response({ error: "Informe título e data válidos" }, 400);
       await db.prepare("INSERT INTO appointments (id, title, kind, starts_at, ends_at, location, entity_id, status, outcome, notes, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
         .bind(id, title, clean(body.kind, 60) || "Reunião", starts, optional(body.ends_at), clean(body.location, 160), optional(body.entity_id), clean(body.status, 40) || "Agendado", clean(body.outcome), clean(body.notes), now, now).run();
+    } else if (resource === "vehicles") {
+      const name = clean(body.name, 120), plate = clean(body.plate, 20).toUpperCase();
+      if (!name) return response({ error: "Informe a identificação do veículo" }, 400);
+      if (plate && await db.prepare("SELECT id FROM vehicles WHERE plate = ? AND deleted_at IS NULL LIMIT 1").bind(plate).first()) return response({ error: "Já existe um veículo com esta placa" }, 409);
+      await db.prepare("INSERT INTO vehicles (id, name, plate, model, notes, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)")
+        .bind(id, name, plate, clean(body.model, 120), clean(body.notes), now, now).run();
+    } else if (resource === "vehicle_logs") {
+      const vehicleId = clean(body.vehicle_id, 80), usedAt = clean(body.used_at, 40) || now;
+      const kmStart = Number(body.km_start), kmEnd = Number(body.km_end);
+      if (!vehicleId || !Number.isInteger(kmStart) || !Number.isInteger(kmEnd) || kmStart < 0 || kmEnd < kmStart) return response({ error: "Selecione o veículo e informe quilômetros válidos; a entrada não pode ser menor que a saída" }, 400);
+      if (!(await db.prepare("SELECT id FROM vehicles WHERE id = ? AND deleted_at IS NULL").bind(vehicleId).first())) return response({ error: "Veículo não encontrado" }, 404);
+      await db.prepare("INSERT INTO vehicle_logs (id, vehicle_id, used_at, km_start, km_end, route, notes, author_email, author_name, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+        .bind(id, vehicleId, usedAt, kmStart, kmEnd, clean(body.route, 500), clean(body.notes), user.email, user.name || user.email, now, now).run();
     } else {
       const bodyText = clean(body.body, 10000);
       if (!bodyText) return response({ error: "Informe o conteúdo do registro" }, 400);
@@ -157,6 +172,20 @@ export async function PUT(request: Request) {
       if (!title || !starts || Number.isNaN(Date.parse(starts))) return response({ error: "Título ou data inválida" }, 400);
       await db.prepare("UPDATE appointments SET title = ?, kind = ?, starts_at = ?, ends_at = ?, location = ?, entity_id = ?, status = ?, outcome = ?, notes = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL")
         .bind(title, clean(body.kind, 60), starts, optional(body.ends_at), clean(body.location, 160), optional(body.entity_id), clean(body.status, 40), clean(body.outcome), clean(body.notes), now, id).run();
+    } else if (resource === "vehicles") {
+      const name = clean(body.name, 120), plate = clean(body.plate, 20).toUpperCase();
+      if (!name) return response({ error: "Informe a identificação do veículo" }, 400);
+      if (plate && await db.prepare("SELECT id FROM vehicles WHERE plate = ? AND id <> ? AND deleted_at IS NULL LIMIT 1").bind(plate, id).first()) return response({ error: "Já existe outro veículo com esta placa" }, 409);
+      const updated = await db.prepare("UPDATE vehicles SET name = ?, plate = ?, model = ?, notes = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL")
+        .bind(name, plate, clean(body.model, 120), clean(body.notes), now, id).run();
+      if (!updated.meta.changes) return response({ error: "Veículo não encontrado" }, 404);
+    } else if (resource === "vehicle_logs") {
+      const vehicleId = clean(body.vehicle_id, 80), usedAt = clean(body.used_at, 40);
+      const kmStart = Number(body.km_start), kmEnd = Number(body.km_end);
+      if (!vehicleId || !usedAt || !Number.isInteger(kmStart) || !Number.isInteger(kmEnd) || kmStart < 0 || kmEnd < kmStart) return response({ error: "Informe veículo, data e quilômetros válidos" }, 400);
+      const updated = await db.prepare("UPDATE vehicle_logs SET vehicle_id = ?, used_at = ?, km_start = ?, km_end = ?, route = ?, notes = ?, updated_at = ?, edited_at = ?, editor_email = ?, editor_name = ? WHERE id = ? AND deleted_at IS NULL")
+        .bind(vehicleId, usedAt, kmStart, kmEnd, clean(body.route, 500), clean(body.notes), now, now, user.email, user.name || user.email, id).run();
+      if (!updated.meta.changes) return response({ error: "Uso de veículo não encontrado" }, 404);
     } else if (resource === "relationships") {
       const source = clean(body.source_id, 80), target = clean(body.target_id, 80), label = clean(body.label, 100);
       if (!source || !target || source === target || !label) return response({ error: "Vínculo inválido" }, 400);
