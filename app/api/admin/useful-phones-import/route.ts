@@ -19,11 +19,12 @@ function digits(value: string) {
 }
 
 export async function POST(request: Request) {
-  if (!env.DB || !(await requireAdministrator(request))) {
+  const db = env.DB;
+  if (!db || !(await requireAdministrator(request))) {
     return Response.json({ error: "Acesso exclusivo do administrador" }, { status: 403 });
   }
 
-  const existing = await env.DB.prepare("SELECT id, name, category, phone, extension, city, notes FROM useful_phones WHERE deleted_at IS NULL").all<ImportRecord>();
+  const existing = await db.prepare("SELECT id, name, category, phone, extension, city, notes FROM useful_phones WHERE deleted_at IS NULL").all<ImportRecord>();
   const known = new Map(existing.results.map((item) => [`${item.name.toLocaleLowerCase("pt-BR")}|${digits(item.phone)}`, item]));
   const pending = (records as ImportRecord[]).filter((item) => !known.has(`${item.name.toLocaleLowerCase("pt-BR")}|${digits(item.phone)}`));
   const updates = (records as ImportRecord[]).flatMap((item) => {
@@ -37,17 +38,17 @@ export async function POST(request: Request) {
 
   for (let index = 0; index < pending.length; index += 50) {
     const chunk = pending.slice(index, index + 50);
-    const statements = chunk.map((item) => env.DB.prepare("INSERT OR IGNORE INTO useful_phones (id, name, category, phone, extension, city, notes, entity_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)")
+    const statements = chunk.map((item) => db.prepare("INSERT OR IGNORE INTO useful_phones (id, name, category, phone, extension, city, notes, entity_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)")
       .bind(item.id, item.name, item.category, item.phone, item.extension, item.city, item.notes, now, now));
-    const results = await env.DB.batch(statements);
+    const results = await db.batch(statements);
     imported += results.reduce((total, result) => total + Number(result.meta.changes || 0), 0);
   }
 
   for (let index = 0; index < updates.length; index += 50) {
     const chunk = updates.slice(index, index + 50);
-    const statements = chunk.map((item) => env.DB.prepare("UPDATE useful_phones SET category = ?, extension = ?, city = ?, notes = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL")
+    const statements = chunk.map((item) => db.prepare("UPDATE useful_phones SET category = ?, extension = ?, city = ?, notes = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL")
       .bind(item.category, item.extension, item.city, item.notes, now, item.id));
-    const results = await env.DB.batch(statements);
+    const results = await db.batch(statements);
     updated += results.reduce((total, result) => total + Number(result.meta.changes || 0), 0);
   }
 

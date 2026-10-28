@@ -68,6 +68,11 @@ const tools = [
 
 type Arguments = Record<string, unknown>;
 
+function database() {
+  if (!env.DB) throw new Error("Banco de dados indisponível");
+  return env.DB;
+}
+
 function clean(value: unknown, max = 200) {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
 }
@@ -98,17 +103,18 @@ async function authorize(request: Request) {
   const email = clean(request.headers.get("oai-authenticated-user-email"), 200).toLocaleLowerCase("pt-BR");
   if (!email || !env.DB) return null;
   if (OWNER_EMAILS.has(email)) return { email, name: "Proprietário ADV.ON", role: "ADMINISTRADOR" };
-  return env.DB.prepare("SELECT email, name, role FROM users WHERE lower(email) = ? AND status = 'ATIVO' LIMIT 1")
+  return database().prepare("SELECT email, name, role FROM users WHERE lower(email) = ? AND status = 'ATIVO' LIMIT 1")
     .bind(email).first<{ email: string; name: string; role: string }>();
 }
 
 async function callTool(name: string, args: Arguments) {
+  const db = database();
   if (name === "resumo_adv_on") {
     const [clients, phones, appointments, diary] = await Promise.all([
-      env.DB.prepare("SELECT count(*) AS total FROM entities WHERE deleted_at IS NULL").first<{ total: number }>(),
-      env.DB.prepare("SELECT count(*) AS total FROM useful_phones WHERE deleted_at IS NULL").first<{ total: number }>(),
-      env.DB.prepare("SELECT count(*) AS total FROM appointments WHERE deleted_at IS NULL").first<{ total: number }>(),
-      env.DB.prepare("SELECT count(*) AS total FROM diary_entries WHERE deleted_at IS NULL").first<{ total: number }>(),
+      db.prepare("SELECT count(*) AS total FROM entities WHERE deleted_at IS NULL").first<{ total: number }>(),
+      db.prepare("SELECT count(*) AS total FROM useful_phones WHERE deleted_at IS NULL").first<{ total: number }>(),
+      db.prepare("SELECT count(*) AS total FROM appointments WHERE deleted_at IS NULL").first<{ total: number }>(),
+      db.prepare("SELECT count(*) AS total FROM diary_entries WHERE deleted_at IS NULL").first<{ total: number }>(),
     ]);
     return textResult({ sistema: "ADV.ON", clientes: clients?.total || 0, telefones_uteis: phones?.total || 0, compromissos: appointments?.total || 0, registros_diarios: diary?.total || 0 });
   }
@@ -116,7 +122,7 @@ async function callTool(name: string, args: Arguments) {
   if (name === "buscar_clientes") {
     const term = clean(args.termo), kind = clean(args.tipo, 20), max = limit(args.limite, 20);
     const like = `%${term}%`;
-    const rows = await env.DB.prepare("SELECT id, kind AS tipo, name AS nome, email, phone AS telefone, notes AS observacoes, created_at AS criado_em, updated_at AS atualizado_em FROM entities WHERE deleted_at IS NULL AND (? = '' OR kind = ?) AND (? = '' OR name LIKE ? OR email LIKE ? OR phone LIKE ? OR notes LIKE ?) ORDER BY name COLLATE NOCASE LIMIT ?")
+    const rows = await db.prepare("SELECT id, kind AS tipo, name AS nome, email, phone AS telefone, notes AS observacoes, created_at AS criado_em, updated_at AS atualizado_em FROM entities WHERE deleted_at IS NULL AND (? = '' OR kind = ?) AND (? = '' OR name LIKE ? OR email LIKE ? OR phone LIKE ? OR notes LIKE ?) ORDER BY name COLLATE NOCASE LIMIT ?")
       .bind(kind, kind, term, like, like, like, like, max).all();
     return textResult({ total: rows.results.length, clientes: rows.results });
   }
@@ -124,7 +130,7 @@ async function callTool(name: string, args: Arguments) {
   if (name === "buscar_telefones_uteis") {
     const term = clean(args.termo), category = clean(args.categoria, 80), max = limit(args.limite, 20);
     const like = `%${term}%`;
-    const rows = await env.DB.prepare("SELECT name AS nome, category AS categoria, phone AS telefone, extension AS ramal, city AS cidade, notes AS observacoes FROM useful_phones WHERE deleted_at IS NULL AND (? = '' OR category = ?) AND (? = '' OR name LIKE ? OR category LIKE ? OR phone LIKE ? OR city LIKE ? OR notes LIKE ?) ORDER BY name COLLATE NOCASE LIMIT ?")
+    const rows = await db.prepare("SELECT name AS nome, category AS categoria, phone AS telefone, extension AS ramal, city AS cidade, notes AS observacoes FROM useful_phones WHERE deleted_at IS NULL AND (? = '' OR category = ?) AND (? = '' OR name LIKE ? OR category LIKE ? OR phone LIKE ? OR city LIKE ? OR notes LIKE ?) ORDER BY name COLLATE NOCASE LIMIT ?")
       .bind(category, category, term, like, like, like, like, like, max).all();
     return textResult({ total: rows.results.length, telefones: rows.results });
   }
@@ -134,7 +140,7 @@ async function callTool(name: string, args: Arguments) {
     const start = isoDate(args.inicio, startDate);
     const defaultEnd = new Date(`${start}T12:00:00Z`); defaultEnd.setUTCDate(defaultEnd.getUTCDate() + 30);
     const end = isoDate(args.fim, defaultEnd), status = clean(args.status, 40), max = limit(args.limite, 30);
-    const rows = await env.DB.prepare("SELECT a.title AS titulo, a.kind AS tipo, a.starts_at AS inicio, a.ends_at AS fim, a.location AS local, a.status, a.outcome AS resultado, a.notes AS observacoes, e.name AS cliente FROM appointments a LEFT JOIN entities e ON e.id = a.entity_id AND e.deleted_at IS NULL WHERE a.deleted_at IS NULL AND substr(a.starts_at, 1, 10) >= ? AND substr(a.starts_at, 1, 10) <= ? AND (? = '' OR a.status = ?) ORDER BY a.starts_at LIMIT ?")
+    const rows = await db.prepare("SELECT a.title AS titulo, a.kind AS tipo, a.starts_at AS inicio, a.ends_at AS fim, a.location AS local, a.status, a.outcome AS resultado, a.notes AS observacoes, e.name AS cliente FROM appointments a LEFT JOIN entities e ON e.id = a.entity_id AND e.deleted_at IS NULL WHERE a.deleted_at IS NULL AND substr(a.starts_at, 1, 10) >= ? AND substr(a.starts_at, 1, 10) <= ? AND (? = '' OR a.status = ?) ORDER BY a.starts_at LIMIT ?")
       .bind(start, end, status, status, max).all();
     return textResult({ intervalo: { inicio: start, fim: end }, total: rows.results.length, compromissos: rows.results });
   }
@@ -142,7 +148,7 @@ async function callTool(name: string, args: Arguments) {
   if (name === "buscar_registros_diarios") {
     const term = clean(args.termo), client = clean(args.cliente), max = limit(args.limite, 20);
     const termLike = `%${term}%`, clientLike = `%${client}%`;
-    const rows = await env.DB.prepare("SELECT d.id, d.occurred_at AS ocorrido_em, d.body AS registro, d.author_name AS autor, d.author_email AS email_autor, d.edited_at AS editado_em, d.editor_name AS editor, group_concat(DISTINCT e.name) AS clientes_citados FROM diary_entries d LEFT JOIN diary_mentions m ON m.entry_id = d.id LEFT JOIN entities e ON e.id = m.entity_id AND e.deleted_at IS NULL WHERE d.deleted_at IS NULL AND (? = '' OR d.body LIKE ?) GROUP BY d.id HAVING (? = '' OR clientes_citados LIKE ?) ORDER BY d.occurred_at DESC LIMIT ?")
+    const rows = await db.prepare("SELECT d.id, d.occurred_at AS ocorrido_em, d.body AS registro, d.author_name AS autor, d.author_email AS email_autor, d.edited_at AS editado_em, d.editor_name AS editor, group_concat(DISTINCT e.name) AS clientes_citados FROM diary_entries d LEFT JOIN diary_mentions m ON m.entry_id = d.id LEFT JOIN entities e ON e.id = m.entity_id AND e.deleted_at IS NULL WHERE d.deleted_at IS NULL AND (? = '' OR d.body LIKE ?) GROUP BY d.id HAVING (? = '' OR clientes_citados LIKE ?) ORDER BY d.occurred_at DESC LIMIT ?")
       .bind(term, termLike, client, clientLike, max).all();
     return textResult({ total: rows.results.length, registros: rows.results });
   }
