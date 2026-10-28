@@ -1,8 +1,7 @@
 import { env } from "cloudflare:workers";
-import { getChatGPTUser } from "../../chatgpt-auth";
+import { getSessionUser } from "../../../lib/auth";
 
 export const dynamic = "force-dynamic";
-const ADMIN_EMAIL = "escritorio@otonnasser.com.br";
 const resources = ["entities", "categories", "relationships", "appointments", "diary", "useful_phones"] as const;
 type Resource = (typeof resources)[number];
 
@@ -28,19 +27,11 @@ async function duplicateUsefulPhone(db: D1Database, name: string, phone: string,
 function validResource(value: string | null): value is Resource {
   return resources.includes(value as Resource);
 }
-async function requireUser() {
-  return getChatGPTUser();
-}
-async function ensureAdmin(db: D1Database) {
-  await db.prepare("INSERT OR IGNORE INTO users (id, email, name, role, status, created_at) VALUES (?, ?, ?, ?, ?, ?)")
-    .bind("initial-administrator", ADMIN_EMAIL, "Administrador", "ADMINISTRADOR", "pendente_autenticacao", new Date().toISOString()).run();
-}
 
 export async function GET(request: Request) {
-  const user = await requireUser();
+  const user = await getSessionUser(request);
   if (!user) return response({ error: "Acesso não autenticado" }, 401);
   const db = database();
-  await ensureAdmin(db);
   const resource = new URL(request.url).searchParams.get("resource");
   if (resource === "bootstrap") {
     const [entities, categories, relationships, appointments, diary, usefulPhones, administrator] = await Promise.all([
@@ -56,7 +47,7 @@ export async function GET(request: Request) {
       db.prepare("SELECT m.entry_id, m.entity_id, e.name, e.kind FROM diary_mentions m JOIN diary_entries d ON d.id = m.entry_id JOIN entities e ON e.id = m.entity_id WHERE d.deleted_at IS NULL AND e.deleted_at IS NULL").all(),
       db.prepare("SELECT entity_id, category_id FROM entity_categories").all(),
     ]);
-    return response({ entities: entities.results, categories: categories.results, categoryLinks: categoryLinks.results, relationships: relationships.results, appointments: appointments.results, diary: diary.results, usefulPhones: usefulPhones.results, mentions: mentions.results, administrator, viewer: { email: user.email, name: user.displayName } });
+    return response({ entities: entities.results, categories: categories.results, categoryLinks: categoryLinks.results, relationships: relationships.results, appointments: appointments.results, diary: diary.results, usefulPhones: usefulPhones.results, mentions: mentions.results, administrator, viewer: { email: user.email, name: user.name } });
   }
   if (!validResource(resource)) return response({ error: "Recurso desconhecido" }, 400);
   const table = resource === "diary" ? "diary_entries" : resource;
@@ -65,7 +56,7 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-  const user = await requireUser();
+  const user = await getSessionUser(request);
   if (!user) return response({ error: "Acesso não autenticado" }, 401);
   const db = database();
   const body = await request.json().catch(() => null) as Record<string, unknown> | null;
@@ -114,7 +105,7 @@ export async function POST(request: Request) {
       const bodyText = clean(body.body, 10000);
       if (!bodyText) return response({ error: "Informe o conteúdo do registro" }, 400);
       await db.prepare("INSERT INTO diary_entries (id, occurred_at, body, author_email, author_name, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?)")
-        .bind(id, now, bodyText, user.email, user.displayName || user.email, now, now).run();
+        .bind(id, now, bodyText, user.email, user.name || user.email, now, now).run();
       const ids = Array.isArray(body.entity_ids) ? [...new Set(body.entity_ids.map((v) => clean(v, 80)).filter(Boolean))] : [];
       for (const entityId of ids) await db.prepare("INSERT INTO diary_mentions (id, entry_id, entity_id) VALUES (?, ?, ?)").bind(crypto.randomUUID(), id, entityId).run();
     }
@@ -126,7 +117,7 @@ export async function POST(request: Request) {
 }
 
 export async function PUT(request: Request) {
-  const user = await requireUser();
+  const user = await getSessionUser(request);
   if (!user) return response({ error: "Acesso não autenticado" }, 401);
   const db = database();
   const body = await request.json().catch(() => null) as Record<string, unknown> | null;
@@ -175,7 +166,7 @@ export async function PUT(request: Request) {
       const bodyText = clean(body.body, 10000);
       if (!bodyText) return response({ error: "Registro inválido" }, 400);
       const updated = await db.prepare("UPDATE diary_entries SET body = ?, updated_at = ?, edited_at = ?, editor_email = ?, editor_name = ? WHERE id = ? AND deleted_at IS NULL")
-        .bind(bodyText, now, now, user.email, user.displayName || user.email, id).run();
+        .bind(bodyText, now, now, user.email, user.name || user.email, id).run();
       if (!updated.meta.changes) return response({ error: "Registro não encontrado" }, 404);
       await db.prepare("DELETE FROM diary_mentions WHERE entry_id = ?").bind(id).run();
       const ids = Array.isArray(body.entity_ids) ? [...new Set(body.entity_ids.map((v) => clean(v, 80)).filter(Boolean))] : [];
@@ -189,7 +180,7 @@ export async function PUT(request: Request) {
 }
 
 export async function DELETE(request: Request) {
-  const user = await requireUser();
+  const user = await getSessionUser(request);
   if (!user) return response({ error: "Acesso não autenticado" }, 401);
   const db = database();
   const body = await request.json().catch(() => null) as Record<string, unknown> | null;

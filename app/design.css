@@ -346,10 +346,48 @@ tr:hover td { background: #f8faff; }
 .phone-card-actions > a, .phone-card-actions > button { display: inline-flex; align-items: center; justify-content: center; gap: 5px; height: 31px; padding: 0 9px; border: 1px solid #e3eaf5; border-radius: 5px; background: #f3f7ff; color: #244764; font-size: 10px; text-decoration: none; }
 .phone-card-actions > a:hover, .phone-card-actions > button:hover { background: #e1ecff; }
 .phone-card-actions .row-actions { margin-left: auto; }
+.logout-button { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 6px; background: transparent; color: #73839a; }
+.logout-button:hover { background: #e7eef8; color: #203d5c; }
+.auth-shell { min-height: 100vh; display: grid; grid-template-columns: minmax(340px, .92fr) minmax(480px, 1.08fr); background: #f6f8fb; }
+.auth-brand { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; padding: clamp(45px, 7vw, 105px); background: #122a43; color: #fff; }
+.auth-brand:after { content: ""; position: absolute; width: 520px; height: 520px; right: -270px; bottom: -260px; border: 1px solid rgba(205,221,247,.18); border-radius: 50%; box-shadow: 0 0 0 70px rgba(205,221,247,.035), 0 0 0 140px rgba(205,221,247,.025); }
+.auth-monogram, .auth-logo { display: grid; place-items: center; width: 54px; height: 54px; border-radius: 9px; background: #0b1d30; border: 1px solid #87a7d0; color: #fff; font: 700 20px Manrope, Arial, sans-serif; letter-spacing: 0; }
+.auth-brand > span { margin-top: 24px; color: #cdddf7; font-size: 12px; font-weight: 700; letter-spacing: .24em; }
+.auth-brand h1 { max-width: 520px; margin: 28px 0 18px; font: 500 clamp(38px, 4.2vw, 62px)/1.05 Newsreader, Georgia, serif; letter-spacing: -.035em; }
+.auth-brand p { max-width: 500px; color: #b9c8da; font-size: 14px; line-height: 1.7; }
+.auth-brand small { margin-top: 60px; color: #8298b3; font-size: 9px; letter-spacing: .22em; }
+.auth-panel { display: grid; place-items: center; padding: 32px; }
+.auth-card { width: min(440px, 100%); padding: 42px; border: 1px solid #dfe6ef; border-radius: 14px; background: #fff; box-shadow: 0 20px 70px rgba(32,61,92,.08); }
+.auth-card-icon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 23px; border-radius: 11px; background: #e7effe; color: #203d5c; }
+.auth-card h2 { margin: 9px 0 8px; color: #172f49; font: 500 30px Newsreader, Georgia, serif; }
+.auth-card > p { margin: 0 0 26px; color: #718097; font-size: 12px; line-height: 1.55; }
+.auth-card form { display: flex; flex-direction: column; gap: 16px; }
+.auth-submit { width: 100%; margin-top: 4px; }
+.auth-error { display: flex; align-items: center; gap: 7px; padding: 10px 12px; border: 1px solid #efc6bc; border-radius: 6px; background: #fff6f3; color: #a04d3b; font-size: 11px; }
+.auth-help { display: block; margin-top: 20px; color: #8794a5; font-size: 10px; line-height: 1.5; text-align: center; }
+.auth-checking, .auth-loading { color: #718097; font-size: 12px; text-align: center; }
+.auth-loading { display: flex; flex-direction: column; align-items: center; justify-content: center; grid-column: 1 / -1; gap: 18px; }
+.users-admin-grid { display: grid; grid-template-columns: minmax(300px, .75fr) minmax(540px, 1.25fr); gap: 20px; align-items: start; }
+.user-create-card .modal-fields { padding-top: 20px; }
+.user-create-card .primary-button { width: 100%; }
+.secure-badge { display: inline-flex; align-items: center; gap: 6px; color: #38664a; font-size: 10px; }
+.password-note { margin: -5px 0 0; color: #8794a5; font-size: 10px; line-height: 1.5; }
+.users-list { padding: 0 24px; }
+.user-row { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.user-row:last-child { border-bottom: 0; }
+.user-details { flex: 1; min-width: 0; }
+.user-details strong, .user-details span, .user-details em { display: block; }
+.user-details strong { color: #253a52; font-size: 12px; }
+.user-details strong small { color: #8b6b3c; font-weight: 600; }
+.user-details span { margin-top: 4px; color: #617188; font-size: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.user-details em { margin-top: 5px; color: #919baa; font-size: 9px; font-style: normal; }
+.user-actions { display: flex; gap: 6px; }
+.user-actions .secondary-button { height: 32px; padding: 0 10px; font-size: 10px; }
 @media (max-width: 1200px) {
   .sidebar { width: 220px; flex-basis: 220px; }
   .brand-edition { display: none; }
   .phone-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .users-admin-grid { grid-template-columns: 1fr; }
 }
 @media (min-width: 1000px) {
   .metric-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -359,6 +397,10 @@ tr:hover td { background: #f8faff; }
   .top-search { flex: 1; width: auto; }
   .top-date { display: none; }
   .topbar { padding: 0 20px; }
+  .auth-shell { grid-template-columns: 1fr; }
+  .auth-brand { min-height: 300px; padding: 45px; }
+  .auth-brand h1 { max-width: 600px; font-size: 42px; }
+  .auth-brand small { margin-top: 25px; }
 }
 @media (max-width: 650px) {
   .content-wrap { padding: 22px 15px 0; }
@@ -392,4 +434,13 @@ tr:hover td { background: #f8faff; }
   .client-filters { padding: 0 18px 18px; }
   .client-filters select, .client-filters .secondary-button { width: 100%; margin-left: 0; }
   .phone-grid { grid-template-columns: 1fr; padding: 8px 18px 18px; }
+  .auth-panel { padding: 18px; }
+  .auth-card { padding: 28px 22px; }
+  .auth-brand { min-height: 260px; padding: 32px 24px; }
+  .auth-brand h1 { margin: 20px 0 10px; font-size: 34px; }
+  .auth-brand p { margin: 0; }
+  .auth-brand small { display: none; }
+  .user-row { align-items: flex-start; flex-wrap: wrap; }
+  .user-details { min-width: 170px; }
+  .user-actions { width: 100%; padding-left: 46px; }
 }

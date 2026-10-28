@@ -3,7 +3,9 @@ import { sqliteTable, text } from "drizzle-orm/sqlite-core";
 export const users = sqliteTable("users", {
   id: text("id").primaryKey(), email: text("email").notNull().unique(),
   name: text("name").notNull(), role: text("role").notNull(),
-  status: text("status").notNull(), createdAt: text("created_at").notNull(),
+  status: text("status").notNull(), passwordHash: text("password_hash"),
+  passwordSalt: text("password_salt"), createdAt: text("created_at").notNull(),
+  updatedAt: text("updated_at").notNull().default(""), lastLoginAt: text("last_login_at"),
 });
 export const categories = sqliteTable("categories", {
   id: text("id").primaryKey(), name: text("name").notNull().unique(),

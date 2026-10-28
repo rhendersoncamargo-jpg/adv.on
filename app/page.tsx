@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { CalendarDays, ChevronLeft, ChevronRight, CirclePlus, ContactRound, LayoutDashboard, NotebookPen, Search, Settings2, UsersRound, Building2, Tags, Link2, Clock3, MapPin, X, Pencil, Trash2, ArrowUpRight, Menu, Check, AlertCircle, Bell, ArrowRight, Phone, Copy, Mail } from "lucide-react";
+import { CalendarDays, ChevronLeft, ChevronRight, CirclePlus, ContactRound, LayoutDashboard, NotebookPen, Search, Settings2, UsersRound, Building2, Tags, Link2, Clock3, MapPin, X, Pencil, Trash2, ArrowUpRight, Menu, Check, AlertCircle, Bell, ArrowRight, Phone, Copy, Mail, LockKeyhole, LogOut, ShieldCheck, UserCog, UserPlus } from "lucide-react";
 
 type Entity = { id: string; kind: "Pessoa" | "Empresa"; name: string; email: string; phone: string; notes: string; created_at: string; updated_at: string };
 type Category = { id: string; name: string; description: string };
@@ -13,6 +13,8 @@ type UsefulPhone = { id: string; name: string; category: string; phone: string; 
 type Data = { entities: Entity[]; categories: Category[]; categoryLinks: { entity_id: string; category_id: string }[]; relationships: Relationship[]; appointments: Appointment[]; diary: DiaryEntry[]; usefulPhones: UsefulPhone[]; mentions: Mention[]; administrator: { email: string; role: string; status: string } | null; viewer: { email: string; name: string } | null };
 type Resource = "entities" | "categories" | "relationships" | "appointments" | "diary" | "useful_phones";
 type FormState = Record<string, string | string[]>;
+type SessionUser = { id: string; email: string; name: string; role: "ADMINISTRADOR" | "USUARIO"; status: "ATIVO" | "INATIVO" };
+type ManagedUser = { id: string; email: string; name: string; role: string; status: string; created_at: string; updated_at: string; last_login_at: string | null };
 const empty: Data = { entities: [], categories: [], categoryLinks: [], relationships: [], appointments: [], diary: [], usefulPhones: [], mentions: [], administrator: null, viewer: null };
 
 const groups = [
@@ -20,6 +22,7 @@ const groups = [
   { title: "CRM", icon: ContactRound, items: [{ id: "clientes", label: "Clientes" }, { id: "telefones-uteis", label: "Telefones Úteis" }] },
   { title: "AGENDA", icon: CalendarDays, items: [{ id: "agenda-hoje", label: "Hoje" }, { id: "agenda-semana", label: "Semana" }, { id: "agenda-mes", label: "Mês" }, { id: "compromissos", label: "Compromissos" }] },
   { title: "REGISTRO DIÁRIO", icon: NotebookPen, items: [{ id: "diario-hoje", label: "Hoje" }, { id: "registros", label: "Registros" }] },
+  { title: "ADMINISTRAÇÃO", icon: UserCog, items: [{ id: "usuarios", label: "Usuários" }] },
 ];
 const titleFor = Object.fromEntries(groups.flatMap(group => group.items.map(item => [item.id, item.label])));
 const sectionFor = Object.fromEntries(groups.flatMap(group => group.items.map(item => [item.id, group.title])));
@@ -36,6 +39,8 @@ function initials(name: string) { return name.split(/\s+/).slice(0, 2).map(part 
 function viewFromUrl() { if (typeof window === "undefined") return "painel"; const value = new URLSearchParams(window.location.search).get("view") || "painel"; if (["contatos", "pessoas", "empresas", "categorias", "relacionamentos"].includes(value)) return "clientes"; if (["pessoas-citadas", "empresas-citadas", "pesquisa"].includes(value)) return "registros"; return titleFor[value] ? value : "painel"; }
 
 export default function Home() {
+  const [session, setSession] = useState<SessionUser | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [view, setView] = useState("painel");
   const [data, setData] = useState<Data>(empty);
   const [loading, setLoading] = useState(true);
@@ -56,17 +61,26 @@ export default function Home() {
   const [selectedClientId, setSelectedClientId] = useState<string | null>(null);
   const [copiedPhoneId, setCopiedPhoneId] = useState<string | null>(null);
 
+  useEffect(() => {
+    void fetch("/api/auth/me", { cache: "no-store" }).then(async response => {
+      if (!response.ok) return setSession(null);
+      const result = await response.json() as { user: SessionUser };
+      setSession(result.user);
+    }).catch(() => setSession(null)).finally(() => setAuthLoading(false));
+  }, []);
+
   const load = useCallback(async () => {
     try {
       const response = await fetch("/api/data?resource=bootstrap", { cache: "no-store" });
       const result = await response.json() as Data & { error?: string };
+      if (response.status === 401) { setSession(null); throw new Error("Sua sessão terminou. Entre novamente."); }
       if (!response.ok) throw new Error(result.error || "Falha ao carregar dados");
       setData(result);
       setError("");
     } catch (cause) { setError(cause instanceof Error ? cause.message : "Falha ao carregar dados"); }
     finally { setLoading(false); }
   }, []);
-  useEffect(() => { setView(viewFromUrl()); void load(); const handler = () => setView(viewFromUrl()); window.addEventListener("popstate", handler); return () => window.removeEventListener("popstate", handler); }, [load]);
+  useEffect(() => { setView(viewFromUrl()); if (session) void load(); const handler = () => setView(viewFromUrl()); window.addEventListener("popstate", handler); return () => window.removeEventListener("popstate", handler); }, [load, session]);
   useEffect(() => { const onKeyDown = (event: KeyboardEvent) => { if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") { event.preventDefault(); document.querySelector<HTMLInputElement>(".top-search input")?.focus(); } }; window.addEventListener("keydown", onKeyDown); return () => window.removeEventListener("keydown", onKeyDown); }, []);
   useEffect(() => {
     if (!modal) return;
@@ -115,6 +129,7 @@ export default function Home() {
   const upcoming = data.appointments.filter(item => dateOnly(item.starts_at) >= today && item.status === "Agendado").slice(0, 5);
   const todayDiary = data.diary.filter(item => dateOnly(diaryWallTime(item.occurred_at)) === today);
   const section = sectionFor[view] || "INÍCIO";
+  const visibleGroups = groups.filter(group => group.title !== "ADMINISTRAÇÃO" || session?.role === "ADMINISTRADOR");
   const activeResource: Resource = view === "clientes" ? "entities" : view === "telefones-uteis" ? "useful_phones" : section === "AGENDA" ? "appointments" : "diary";
   const createLabel = activeResource === "entities" ? "Novo cliente" : activeResource === "useful_phones" ? "Novo telefone" : activeResource === "appointments" ? "Novo compromisso" : view === "diario-hoje" ? "Novo registro" : "Ir para Hoje";
 
@@ -165,21 +180,30 @@ export default function Home() {
   const monthDate = useMemo(() => { const date = new Date(`${today}T12:00:00`); date.setDate(1); date.setMonth(date.getMonth() + monthOffset); return date; }, [today, monthOffset]);
   const monthDays = useMemo(() => { const first = new Date(monthDate); const shift = (first.getDay() + 6) % 7; first.setDate(1 - shift); return Array.from({ length: 42 }, (_, index) => { const day = new Date(first); day.setDate(first.getDate() + index); return day; }); }, [monthDate]);
 
+  async function logout() {
+    await fetch("/api/auth/logout", { method: "POST" }).catch(() => undefined);
+    setSession(null); setData(empty); setView("painel");
+    window.history.replaceState({}, "", "/");
+  }
+
+  if (authLoading) return <div className="auth-shell"><div className="auth-loading"><div className="auth-logo">ON</div><p>Verificando acesso seguro…</p></div></div>;
+  if (!session) return <AuthScreen onAuthenticated={user => { setSession(user); setLoading(true); }}/>;
+
   return <div className="app-shell">
     <aside className={`sidebar ${mobileMenu ? "open" : ""}`}>
       <div className="brand"><div className="brand-mark">ON</div><div><strong>ADV.ON</strong><small>OTON NASSER ADVOCACIA</small></div><span className="brand-edition">JURÍDICO</span></div>
       <div className="sidebar-caption">NAVEGAÇÃO PRINCIPAL</div>
       <nav aria-label="Navegação principal">
-        {groups.map(group => <div className="nav-group" key={group.title}><button type="button" className={`nav-heading ${section === group.title ? "active" : ""}`} onClick={() => navigate(group.items[0].id)}><group.icon size={18} strokeWidth={1.8}/><span>{group.title === "INÍCIO" ? "Início" : group.title === "AGENDA" ? "Agenda" : group.title === "CRM" ? "CRM" : "Registro Diário"}</span>{section === group.title && <span className="nav-dot"/>}</button>{section === group.title && <div className="nav-items">{group.items.map(item => <button key={item.id} type="button" className={`nav-item ${view === item.id ? "active" : ""}`} onClick={() => navigate(item.id)}>{item.label}</button>)}</div>}</div>)}
+        {visibleGroups.map(group => <div className="nav-group" key={group.title}><button type="button" className={`nav-heading ${section === group.title ? "active" : ""}`} onClick={() => navigate(group.items[0].id)}><group.icon size={18} strokeWidth={1.8}/><span>{group.title === "INÍCIO" ? "Início" : group.title === "AGENDA" ? "Agenda" : group.title === "CRM" ? "CRM" : group.title === "ADMINISTRAÇÃO" ? "Administração" : "Registro Diário"}</span>{section === group.title && <span className="nav-dot"/>}</button>{section === group.title && <div className="nav-items">{group.items.map(item => <button key={item.id} type="button" className={`nav-item ${view === item.id ? "active" : ""}`} onClick={() => navigate(item.id)}>{item.label}</button>)}</div>}</div>)}
       </nav>
-      <div className="sidebar-bottom"><div className="admin-avatar">{data.viewer ? initials(data.viewer.name) : "ON"}</div><div className="admin-meta"><strong>{data.viewer?.name || "Acesso do escritório"}</strong><span>{data.viewer?.email || "escritorio@otonnasser.com.br"}</span></div><Settings2 size={16}/></div>
+      <div className="sidebar-bottom"><div className="admin-avatar">{initials(session.name)}</div><div className="admin-meta"><strong>{session.name}</strong><span>{session.email}</span></div><button type="button" className="logout-button" onClick={() => void logout()} title="Sair" aria-label="Sair"><LogOut size={16}/></button></div>
     </aside>
     {mobileMenu && <button type="button" aria-label="Fechar menu" className="mobile-overlay" onClick={() => setMobileMenu(false)}/>}
     <main className="main-content">
-      <header className="topbar"><button type="button" className="mobile-toggle" onClick={() => setMobileMenu(true)} aria-label="Abrir menu"><Menu size={23}/></button><div className="top-search"><Search size={18}/><input aria-label="Pesquisar nesta seção" value={query} onChange={event => setQuery(event.target.value)} placeholder="Pesquisar nesta seção"/><kbd>Ctrl+K</kbd></div><div className="topbar-actions"><span className="top-date"><CalendarDays size={17}/>{prettyDate(today, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</span><Bell size={18} aria-hidden="true"/><button className="primary-button top-create" type="button" onClick={() => openCreate("diary")}><CirclePlus size={17}/>{view === "diario-hoje" ? "Novo registro" : "Ir para Hoje"}</button></div></header>
+      <header className="topbar"><button type="button" className="mobile-toggle" onClick={() => setMobileMenu(true)} aria-label="Abrir menu"><Menu size={23}/></button><div className="top-search"><Search size={18}/><input aria-label="Pesquisar nesta seção" value={query} onChange={event => setQuery(event.target.value)} placeholder="Pesquisar nesta seção"/><kbd>Ctrl+K</kbd></div><div className="topbar-actions"><span className="top-date"><CalendarDays size={17}/>{prettyDate(today, { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</span><Bell size={18} aria-hidden="true"/>{view !== "usuarios" && <button className="primary-button top-create" type="button" onClick={() => openCreate("diary")}><CirclePlus size={17}/>{view === "diario-hoje" ? "Novo registro" : "Ir para Hoje"}</button>}</div></header>
       <div className="content-wrap">
         {error && <div className="error-banner" role="alert"><AlertCircle size={18}/><span>{error}</span><button type="button" onClick={() => setError("")} aria-label="Dispensar aviso"><X size={16}/></button></div>}
-        <div className="page-heading"><div><div className="eyebrow">{view === "painel" ? "PAINEL DE CONTROLE JURÍDICO" : section === "CRM" ? "CRM DO ESCRITÓRIO" : section === "AGENDA" ? "ROTINA E COMPROMISSOS" : "MEMÓRIA DO ESCRITÓRIO"}</div><h1>{view === "painel" ? "Painel do Dia" : view === "clientes" ? "Clientes" : view === "telefones-uteis" ? "Telefones Úteis" : section === "AGENDA" ? "Agenda Integrada" : section === "REGISTRO DIÁRIO" ? "Registro Diário" : titleFor[view]}</h1><p>{view === "painel" ? "A rotina do escritório reunida em um só lugar." : view === "clientes" ? "Cadastre e atualize pessoas e organizações em um só lugar." : view === "telefones-uteis" ? "Números de locais e serviços que o escritório consulta com frequência." : section === "AGENDA" ? "Compromissos e acontecimentos planejados para a equipe." : "A memória do escritório, organizada e pesquisável."}</p></div><div className="heading-actions"><span className="date-pill"><CalendarDays size={16}/>{prettyDate(today, { weekday: "long", day: "numeric", month: "long" })}</span><button className="primary-button" type="button" onClick={() => openCreate(view === "painel" ? "appointments" : activeResource)}><CirclePlus size={18}/>{view === "painel" ? "Novo compromisso" : createLabel}</button></div></div>
+        <div className="page-heading"><div><div className="eyebrow">{view === "painel" ? "PAINEL DE CONTROLE JURÍDICO" : section === "CRM" ? "CRM DO ESCRITÓRIO" : section === "AGENDA" ? "ROTINA E COMPROMISSOS" : section === "ADMINISTRAÇÃO" ? "SEGURANÇA E ACESSO" : "MEMÓRIA DO ESCRITÓRIO"}</div><h1>{view === "painel" ? "Painel do Dia" : view === "clientes" ? "Clientes" : view === "telefones-uteis" ? "Telefones Úteis" : section === "AGENDA" ? "Agenda Integrada" : section === "REGISTRO DIÁRIO" ? "Registro Diário" : titleFor[view]}</h1><p>{view === "painel" ? "A rotina do escritório reunida em um só lugar." : view === "clientes" ? "Cadastre e atualize pessoas e organizações em um só lugar." : view === "telefones-uteis" ? "Números de locais e serviços que o escritório consulta com frequência." : section === "AGENDA" ? "Compromissos e acontecimentos planejados para a equipe." : section === "ADMINISTRAÇÃO" ? "Cadastre e controle quem pode entrar no sistema." : "A memória do escritório, organizada e pesquisável."}</p></div>{view !== "usuarios" && <div className="heading-actions"><span className="date-pill"><CalendarDays size={16}/>{prettyDate(today, { weekday: "long", day: "numeric", month: "long" })}</span><button className="primary-button" type="button" onClick={() => openCreate(view === "painel" ? "appointments" : activeResource)}><CirclePlus size={18}/>{view === "painel" ? "Novo compromisso" : createLabel}</button></div>}</div>
         {loading ? <div className="loading-state">Carregando informações do escritório…</div> : <>
           {view === "painel" && <>
             <div className="welcome-card"><div><span>VISÃO GERAL</span><h2>Um bom dia começa com<br/>tudo em ordem.</h2><p>Acompanhe seus compromissos, contatos e registros recentes.</p></div><div className="welcome-monogram">ON<span>.</span></div></div>
@@ -187,6 +211,7 @@ export default function Home() {
             <div className="dashboard-grid"><section className="panel"><PanelTitle title="Próximos compromissos" subtitle="O que vem pela frente" action={() => navigate("compromissos")}/>{upcoming.length ? <div className="compact-list">{upcoming.map(item => <div className="compact-row" key={item.id}><div className="date-block"><strong>{item.starts_at.slice(8, 10)}</strong><span>{prettyDate(item.starts_at, { month: "short" })}</span></div><div><strong>{item.title}</strong><span>{timeOnly(item.starts_at)} · {item.entity_name || item.kind}</span></div><span className="status-badge">{item.status}</span></div>)}</div> : <EmptyState icon={CalendarDays} title="Agenda tranquila" description="Os próximos compromissos aparecerão aqui." action="Criar compromisso" onAction={() => openCreate("appointments")}/>}</section><section className="panel"><PanelTitle title="Registro Diário" subtitle="Últimos acontecimentos" action={() => navigate("registros")}/>{data.diary.length ? <div className="compact-list">{data.diary.slice(0, 4).map(item => <div className="diary-preview" key={item.id}><span className="preview-dot"/><div><p>{item.body}</p><small>{prettyDate(diaryWallTime(item.occurred_at))} · {timeOnly(diaryWallTime(item.occurred_at))}</small></div></div>)}</div> : <EmptyState icon={NotebookPen} title="Ainda sem registros" description="Registre acontecimentos para preservar o contexto do escritório." action="Ir para Hoje" onAction={() => openCreate("diary")}/>}</section></div>
             <section className="quick-modules panel"><div><h2>Acesso rápido aos módulos</h2><p>Navegação direta pelas áreas operacionais do escritório</p></div><div className="module-grid"><button type="button" onClick={() => navigate("clientes")}><UsersRound size={21}/><span><strong>Clientes</strong><small>Cadastro de pessoas e organizações</small></span><ArrowRight size={18}/></button><button type="button" onClick={() => navigate("agenda-mes")}><CalendarDays size={21}/><span><strong>Agenda integrada</strong><small>Compromissos por dia, semana e mês</small></span><ArrowRight size={18}/></button><button type="button" onClick={() => navigate("registros")}><NotebookPen size={21}/><span><strong>Registro Diário</strong><small>Fatos e notas do escritório</small></span><ArrowRight size={18}/></button></div></section>
           </>}
+          {view === "usuarios" && session.role === "ADMINISTRADOR" && <UserAdministration currentUserId={session.id}/>}
           {view === "clientes" && <>
             <div className="metric-grid relationship-metrics">
               <Metric icon={ContactRound} label="Cadastros" value={data.entities.length} detail="pessoas e organizações"/>
@@ -240,6 +265,117 @@ export default function Home() {
       {modal === "appointments" && <><Field label="Título" required><input required value={String(form.title || "")} onChange={event => update("title", event.target.value)} placeholder="Ex.: Reunião com cliente"/></Field><div className="field-pair"><Field label="Tipo"><select value={String(form.kind || "Reunião")} onChange={event => update("kind", event.target.value)}>{["Reunião", "Ligação", "Atendimento", "Visita", "Evento", "Lembrete", "Outro"].map(kind => <option key={kind}>{kind}</option>)}</select></Field><Field label="Status"><select value={String(form.status || "Agendado")} onChange={event => update("status", event.target.value)}>{["Agendado", "Realizado", "Cancelado", "Reagendado"].map(status => <option key={status}>{status}</option>)}</select></Field></div><div className="field-pair"><Field label="Início" required><input type="datetime-local" required value={String(form.starts_at || "").slice(0,16)} onChange={event => update("starts_at", event.target.value)}/></Field><Field label="Fim"><input type="datetime-local" value={String(form.ends_at || "").slice(0,16)} onChange={event => update("ends_at", event.target.value)}/></Field></div><Field label="Local"><input value={String(form.location || "")} onChange={event => update("location", event.target.value)} placeholder="Endereço ou link da reunião"/></Field><Field label="Contato relacionado"><select value={String(form.entity_id || "")} onChange={event => update("entity_id", event.target.value)}><option value="">Sem contato relacionado</option>{data.entities.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}</select></Field><Field label="Resultado"><textarea rows={2} value={String(form.outcome || "")} onChange={event => update("outcome", event.target.value)} placeholder="Resumo após o compromisso"/></Field><Field label="Observações"><textarea rows={2} value={String(form.notes || "")} onChange={event => update("notes", event.target.value)}/></Field></>}
       {modal === "diary" && <><p className="diary-edit-note">Registro original de {prettyDate(diaryWallTime(String(form.occurred_at || "")))} às {timeOnly(diaryWallTime(String(form.occurred_at || "")))}. A edição será identificada automaticamente.</p><Field label="O que aconteceu?" required><textarea required rows={6} value={String(form.body || "")} onChange={event => update("body", event.target.value)} placeholder="Registre o fato com contexto suficiente para consulta futura."/></Field><Field label="Pessoas e empresas citadas (opcional)"><div className="mention-picker">{data.entities.length ? data.entities.map(item => { const selected = Array.isArray(form.entity_ids) && form.entity_ids.includes(item.id); return <label key={item.id}><input type="checkbox" checked={selected} onChange={() => update("entity_ids", selected ? (form.entity_ids as string[]).filter(id => id !== item.id) : [...(Array.isArray(form.entity_ids) ? form.entity_ids : []), item.id])}/><span>{item.name}</span><small>{item.kind}</small></label>; }) : <p>Cadastre uma pessoa ou empresa para relacioná-la ao registro.</p>}</div></Field></>}
     </div>{error && <div className="form-error" role="alert">{error}</div>}<div className="modal-footer"><button type="button" className="secondary-button" onClick={() => setModal(null)}>Cancelar</button><button type="submit" className="primary-button" disabled={saving}>{saving ? "Salvando…" : <><Check size={17}/> Salvar registro</>}</button></div></form></div></div>}
+  </div>;
+}
+
+function AuthScreen({ onAuthenticated }: { onAuthenticated: (user: SessionUser) => void }) {
+  const [needsSetup, setNeedsSetup] = useState(false);
+  const [checking, setChecking] = useState(true);
+  const [mode, setMode] = useState<"login" | "setup">("login");
+  const [email, setEmail] = useState("escritorio@otonnasser.com.br");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [setupToken, setSetupToken] = useState("");
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    void fetch("/api/auth/status", { cache: "no-store" }).then(async response => await response.json() as { needsSetup?: boolean }).then(result => {
+      const pending = Boolean(result.needsSetup);
+      setNeedsSetup(pending); setMode(pending ? "setup" : "login");
+    }).catch(() => setError("Não foi possível verificar o primeiro acesso.")).finally(() => setChecking(false));
+  }, []);
+
+  async function submit(event: React.FormEvent) {
+    event.preventDefault(); setError("");
+    if (mode === "setup" && password !== confirmPassword) return setError("As senhas não coincidem");
+    setSubmitting(true);
+    try {
+      const response = await fetch(mode === "setup" ? "/api/auth/setup" : "/api/auth/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email, password, token: setupToken }) });
+      const result = await response.json() as { error?: string };
+      if (!response.ok) throw new Error(result.error || "Não foi possível entrar");
+      const me = await fetch("/api/auth/me", { cache: "no-store" });
+      if (!me.ok) throw new Error("A sessão não pôde ser iniciada");
+      const session = await me.json() as { user: SessionUser };
+      onAuthenticated(session.user);
+    } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível entrar"); }
+    finally { setSubmitting(false); }
+  }
+
+  return <div className="auth-shell">
+    <section className="auth-brand"><div className="auth-monogram">ON</div><span>ADV.ON</span><h1>Gestão jurídica com acesso reservado.</h1><p>Relacionamentos, agenda e registros do escritório protegidos em um único ambiente.</p><small>OTON NASSER ADVOCACIA</small></section>
+    <main className="auth-panel"><div className="auth-card"><div className="auth-card-icon"><LockKeyhole size={25}/></div><span className="eyebrow">ACESSO SEGURO</span><h2>{mode === "setup" ? "Ativar administrador" : "Entrar no ADV.ON"}</h2><p>{mode === "setup" ? "Defina a primeira senha administrativa usando o código de ativação." : "Use o acesso criado pelo administrador do escritório."}</p>
+      {checking ? <div className="auth-checking">Verificando configuração…</div> : <form onSubmit={submit}>
+        <Field label="E-mail" required><input type="email" autoComplete="username" required value={email} onChange={event => setEmail(event.target.value)} disabled={mode === "setup"}/></Field>
+        {mode === "setup" && <Field label="Código de ativação" required><input type="password" autoComplete="one-time-code" required value={setupToken} onChange={event => setSetupToken(event.target.value)} placeholder="Código fornecido pelo sistema"/></Field>}
+        <Field label={mode === "setup" ? "Nova senha" : "Senha"} required><input type="password" autoComplete={mode === "setup" ? "new-password" : "current-password"} required value={password} onChange={event => setPassword(event.target.value)} placeholder="Mínimo 10 caracteres"/></Field>
+        {mode === "setup" && <Field label="Confirmar senha" required><input type="password" autoComplete="new-password" required value={confirmPassword} onChange={event => setConfirmPassword(event.target.value)}/></Field>}
+        {error && <div className="auth-error" role="alert"><AlertCircle size={16}/>{error}</div>}
+        <button className="primary-button auth-submit" type="submit" disabled={submitting}>{submitting ? "Aguarde…" : mode === "setup" ? "Ativar e entrar" : "Entrar"}<ArrowRight size={17}/></button>
+      </form>}
+      {!needsSetup && <small className="auth-help">O cadastro e a recuperação de acesso são realizados pelo administrador.</small>}
+    </div></main>
+  </div>;
+}
+
+function UserAdministration({ currentUserId }: { currentUserId: string }) {
+  const [users, setUsers] = useState<ManagedUser[]>([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+
+  const loadUsers = useCallback(async () => {
+    try {
+      const response = await fetch("/api/admin/users", { cache: "no-store" });
+      const result = await response.json() as { users?: ManagedUser[]; error?: string };
+      if (!response.ok) throw new Error(result.error || "Não foi possível carregar usuários");
+      setUsers(result.users || []);
+    } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível carregar usuários"); }
+    finally { setLoading(false); }
+  }, []);
+  useEffect(() => { void loadUsers(); }, [loadUsers]);
+
+  async function createUser(event: React.FormEvent) {
+    event.preventDefault(); setSaving(true); setError("");
+    try {
+      const response = await fetch("/api/admin/users", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, email, password }) });
+      const result = await response.json() as { error?: string };
+      if (!response.ok) throw new Error(result.error || "Não foi possível criar o usuário");
+      setName(""); setEmail(""); setPassword(""); await loadUsers();
+    } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível criar o usuário"); }
+    finally { setSaving(false); }
+  }
+
+  async function updateUser(id: string, change: { status?: string; password?: string }) {
+    setError("");
+    try {
+      const response = await fetch("/api/admin/users", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, ...change }) });
+      const result = await response.json() as { error?: string };
+      if (!response.ok) throw new Error(result.error || "Não foi possível alterar o usuário");
+      await loadUsers();
+    } catch (cause) { setError(cause instanceof Error ? cause.message : "Não foi possível alterar o usuário"); }
+  }
+
+  function resetPassword(user: ManagedUser) {
+    const next = window.prompt(`Defina uma nova senha temporária para ${user.name}.\nMínimo de 10 caracteres, com maiúscula, minúscula e número.`);
+    if (next) void updateUser(user.id, { password: next });
+  }
+
+  return <div className="users-admin-grid">
+    <section className="panel user-create-card"><div className="panel-title"><div><h2>Novo usuário</h2><p>Somente o administrador pode liberar novos acessos.</p></div><span className="secure-badge"><ShieldCheck size={15}/> Administrador</span></div><form className="modal-fields" onSubmit={createUser}>
+      <Field label="Nome completo" required><input required value={name} onChange={event => setName(event.target.value)} placeholder="Nome do colaborador"/></Field>
+      <Field label="E-mail de acesso" required><input required type="email" value={email} onChange={event => setEmail(event.target.value)} placeholder="usuario@escritorio.com.br"/></Field>
+      <Field label="Senha temporária" required><input required type="password" value={password} onChange={event => setPassword(event.target.value)} placeholder="Mínimo 10 caracteres"/></Field>
+      <p className="password-note">Use letra maiúscula, minúscula e número. Entregue a senha diretamente ao usuário.</p>
+      <button className="primary-button" type="submit" disabled={saving}><UserPlus size={17}/>{saving ? "Criando…" : "Criar usuário"}</button>
+    </form></section>
+    <section className="panel users-list-card"><div className="list-toolbar"><div><h2>Usuários do sistema</h2><p>Todos os usuários ativos acessam os módulos operacionais.</p></div><span className="count-pill">{users.filter(user => user.status === "ATIVO").length} ativos</span></div>
+      {error && <div className="form-error" role="alert">{error}</div>}
+      {loading ? <div className="loading-state">Carregando usuários…</div> : <div className="users-list">{users.map(user => <article key={user.id} className="user-row"><div className="entity-avatar">{initials(user.name)}</div><div className="user-details"><strong>{user.name}{user.id === currentUserId && <small> Você</small>}</strong><span>{user.email}</span><em>{user.role === "ADMINISTRADOR" ? "Administrador" : "Usuário"} · {user.last_login_at ? `último acesso ${new Date(user.last_login_at).toLocaleString("pt-BR", { timeZone: "America/Cuiaba" })}` : "ainda não acessou"}</em></div><span className={`status-badge ${user.status === "INATIVO" ? "cancelled" : "done"}`}>{user.status === "ATIVO" ? "Ativo" : "Inativo"}</span>{user.id !== currentUserId && <div className="user-actions"><button type="button" className="secondary-button" onClick={() => resetPassword(user)}>Redefinir senha</button><button type="button" className="secondary-button" onClick={() => void updateUser(user.id, { status: user.status === "ATIVO" ? "INATIVO" : "ATIVO" })}>{user.status === "ATIVO" ? "Bloquear" : "Ativar"}</button></div>}</article>)}</div>}
+    </section>
   </div>;
 }
 
